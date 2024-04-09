@@ -28,6 +28,22 @@ namespace BorrowingSystemV2
         public AdminLogin()
         {
             InitializeComponent();
+            instance = this;
+        }
+
+        public void loadform(object Form)
+        {
+            if (this.loginpanel.Controls.Count > 1)
+            {
+                this.loginpanel.Controls.RemoveAt(1);
+            }
+
+            Form f = Form as Form;
+            f.TopLevel = false;
+            this.loginpanel.Controls.Add(f);
+            f.Dock = DockStyle.Fill;
+            f.BringToFront();
+            f.Show();
         }
 
         private void AdminLogin_Load(object sender, EventArgs e)
@@ -119,7 +135,7 @@ namespace BorrowingSystemV2
 
         private void linkStaff_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            loadform(new StaffLogin());
         }
     }
 }

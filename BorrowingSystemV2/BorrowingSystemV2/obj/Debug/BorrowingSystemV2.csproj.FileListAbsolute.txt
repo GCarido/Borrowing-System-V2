@@ -42,3 +42,5 @@ D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\bin\Debug
 D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\Borrowin.1A67A6EB.Up2Date
+D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.StaffForm.resources
+D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.Dashboard.resources
