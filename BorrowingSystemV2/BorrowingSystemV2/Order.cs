@@ -46,6 +46,11 @@ namespace BorrowingSystemV2
                 MessageBox.Show("Please provide all necessary information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if(!int.TryParse(quantityTxtbx.Text, out int quantity))
+            {
+                MessageBox.Show("The quantity must be a whole number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             MySqlConnection connection = new MySqlConnection($"datasource={mySqlServerName};port=3306;username={mySqlServerUserId};password={mySqlServerPassword};database={mySqlDatabaseName}");
             connection.Open();
