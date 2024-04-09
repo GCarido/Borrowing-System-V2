@@ -41,7 +41,7 @@
             // loginpanel
             // 
             this.loginpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(188)))), ((int)(((byte)(228)))));
-            this.loginpanel.BackgroundImage = global::BorrowingSystemV2.Properties.Resources._4031;
+            this.loginpanel.BackgroundImage = global::BorrowingSystemV2.Properties.Resources._403_4__1_;
             this.loginpanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.loginpanel.Controls.Add(this.loginStaff);
             this.loginpanel.Controls.Add(this.linkAdmin);
@@ -87,6 +87,7 @@
             this.linkAdmin.TabIndex = 3;
             this.linkAdmin.TabStop = true;
             this.linkAdmin.Text = "Login as Admin?";
+            this.linkAdmin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkAdmin_LinkClicked_1);
             // 
             // staffusertxtbox
             // 
@@ -98,6 +99,7 @@
             this.staffusertxtbox.Size = new System.Drawing.Size(238, 28);
             this.staffusertxtbox.TabIndex = 0;
             this.staffusertxtbox.TextChanged += new System.EventHandler(this.staffusertxtbox_TextChanged);
+            this.staffusertxtbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.staffusertxtbox_KeyDown);
             // 
             // unhideButton
             // 
@@ -122,6 +124,7 @@
             this.staffpasstxtbox.Size = new System.Drawing.Size(238, 28);
             this.staffpasstxtbox.TabIndex = 1;
             this.staffpasstxtbox.TextChanged += new System.EventHandler(this.staffpasstxtbox_TextChanged);
+            this.staffpasstxtbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.staffpasstxtbox_KeyDown);
             // 
             // hideButton
             // 
@@ -157,8 +160,8 @@
         private System.Windows.Forms.Button unhideButton;
         private System.Windows.Forms.Button loginStaff;
         private System.Windows.Forms.LinkLabel linkAdmin;
-        private System.Windows.Forms.TextBox staffpasstxtbox;
-        private System.Windows.Forms.TextBox staffusertxtbox;
         private System.Windows.Forms.Button hideButton;
+        private System.Windows.Forms.TextBox staffusertxtbox;
+        private System.Windows.Forms.TextBox staffpasstxtbox;
     }
 }

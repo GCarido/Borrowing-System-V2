@@ -28,6 +28,22 @@ namespace BorrowingSystemV2
         public StaffLogin()
         {
             InitializeComponent();
+            instance = this;
+        }
+
+        public void loadform(object Form)
+        {
+            if (this.loginpanel.Controls.Count > 1)
+            {
+                this.loginpanel.Controls.RemoveAt(1);
+            }
+
+            Form f = Form as Form;
+            f.TopLevel = false;
+            this.loginpanel.Controls.Add(f);
+            f.Dock = DockStyle.Fill;
+            f.BringToFront();
+            f.Show();
         }
 
         private void unhideButton_Click(object sender, EventArgs e)
@@ -58,32 +74,18 @@ namespace BorrowingSystemV2
 
         private void staffusertxtbox_KeyDown(object sender, KeyEventArgs e)
         {
-
             if (e.KeyCode == Keys.Enter)
             {
                 loginStaff.PerformClick();
             }
-
         }
 
         private void staffpasstxtbox_KeyDown(object sender, KeyEventArgs e)
         {
-
             if (e.KeyCode == Keys.Enter)
             {
                 loginStaff.PerformClick();
             }
-        }
-
-
-        private void staffpasstxtbox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void staffusertxtbox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void loginStaff_Click(object sender, EventArgs e)
@@ -116,7 +118,7 @@ namespace BorrowingSystemV2
                     }
 
                     Username = table.Rows[0]["username"].ToString();
-                    EmployeeID = table.Rows[0]["employeeID"].ToString();
+                    EmployeeID = table.Rows[0]["staffID"].ToString();
                     Position = table.Rows[0]["position"].ToString();
                     LoginPage.instance.Hide();
                     StaffForm form2 = new StaffForm();
@@ -128,5 +130,22 @@ namespace BorrowingSystemV2
                 MessageBox.Show("Error", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void linkAdmin_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            loadform(new AdminLogin());
+        }
+
+        private void staffusertxtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void staffpasstxtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
