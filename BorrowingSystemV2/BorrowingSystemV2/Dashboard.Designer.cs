@@ -116,6 +116,7 @@
             this.dashboardTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dashboardTable.Size = new System.Drawing.Size(1492, 524);
             this.dashboardTable.TabIndex = 2;
+            this.dashboardTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dashboardTable_CellContentClick);
             // 
             // id_number
             // 

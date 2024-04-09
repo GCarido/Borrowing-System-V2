@@ -12,9 +12,18 @@ namespace BorrowingSystemV2
 {
     public partial class Dashboard : Form
     {
+        public string mySqlServerName = "sql6.freemysqlhosting.net";
+        public string mySqlServerUserId = "sql6690575";
+        public string mySqlServerPassword = "WzrG9YgeeE";
+        public string mySqlDatabaseName = "sql6690575";
         public Dashboard()
         {
             InitializeComponent();
+        }
+
+        private void dashboardTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

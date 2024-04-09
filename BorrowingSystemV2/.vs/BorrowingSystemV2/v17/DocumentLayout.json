@@ -3,24 +3,52 @@
   "WorkspaceRootPath": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|d:\\web project\\borrowing-system-v2\\borrowingsystemv2\\borrowingsystemv2\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|solutionrelative:borrowingsystemv2\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|d:\\web project\\borrowing-system-v2\\borrowingsystemv2\\borrowingsystemv2\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|solutionrelative:borrowingsystemv2\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|d:\\web project\\borrowing-system-v2\\borrowingsystemv2\\borrowingsystemv2\\staffform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|solutionrelative:borrowingsystemv2\\staffform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|d:\\web project\\borrowing-system-v2\\borrowingsystemv2\\borrowingsystemv2\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|solutionrelative:borrowingsystemv2\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|d:\\web project\\borrowing-system-v2\\borrowingsystemv2\\borrowingsystemv2\\staffform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|solutionrelative:borrowingsystemv2\\staffform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|d:\\web project\\borrowing-system-v2\\borrowingsystemv2\\borrowingsystemv2\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|solutionrelative:borrowingsystemv2\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|d:\\web project\\borrowing-system-v2\\borrowingsystemv2\\borrowingsystemv2\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|d:\\web project\\borrowing-system-v2\\borrowingsystemv2\\borrowingsystemv2\\adminlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|solutionrelative:borrowingsystemv2\\adminlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|d:\\web project\\borrowing-system-v2\\borrowingsystemv2\\borrowingsystemv2\\adminlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|solutionrelative:borrowingsystemv2\\adminlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|d:\\web project\\borrowing-system-v2\\borrowingsystemv2\\borrowingsystemv2\\stafflogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|solutionrelative:borrowingsystemv2\\stafflogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|d:\\web project\\borrowing-system-v2\\borrowingsystemv2\\borrowingsystemv2\\stafflogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|solutionrelative:borrowingsystemv2\\stafflogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\borrowingsystemv2\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|solutionrelative:borrowingsystemv2\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|d:\\web project\\borrowing-system-v2\\borrowingsystemv2\\borrowingsystemv2\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\borrowingsystemv2\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|solutionrelative:borrowingsystemv2\\loginpage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\borrowingsystemv2\\staffform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|solutionrelative:borrowingsystemv2\\staffform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\borrowingsystemv2\\staffform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{BF2FDE83-F962-46ED-9F4C-C93F9B28B20C}|BorrowingSystemV2\\BorrowingSystemV2.csproj|solutionrelative:borrowingsystemv2\\staffform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,7 +66,58 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StaffLogin.cs",
+              "DocumentMoniker": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\StaffLogin.cs",
+              "RelativeDocumentMoniker": "BorrowingSystemV2\\StaffLogin.cs",
+              "ToolTip": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\StaffLogin.cs",
+              "RelativeToolTip": "BorrowingSystemV2\\StaffLogin.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAewBEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T10:25:06.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StaffLogin.cs [Design]",
+              "DocumentMoniker": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\StaffLogin.cs",
+              "RelativeDocumentMoniker": "BorrowingSystemV2\\StaffLogin.cs",
+              "ToolTip": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\StaffLogin.cs [Design]",
+              "RelativeToolTip": "BorrowingSystemV2\\StaffLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T10:25:05.503Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminLogin.cs",
+              "DocumentMoniker": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\AdminLogin.cs",
+              "RelativeDocumentMoniker": "BorrowingSystemV2\\AdminLogin.cs",
+              "ToolTip": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\AdminLogin.cs",
+              "RelativeToolTip": "BorrowingSystemV2\\AdminLogin.cs",
+              "ViewState": "AQIAAGIAAAAAAAAAAAAswBAAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T09:02:44.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\Order.cs",
+              "RelativeDocumentMoniker": "BorrowingSystemV2\\Order.cs",
+              "ToolTip": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\Order.cs",
+              "RelativeToolTip": "BorrowingSystemV2\\Order.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAADgv1EAAABiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T08:19:15.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Order.cs [Design]",
               "DocumentMoniker": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\Order.cs",
               "RelativeDocumentMoniker": "BorrowingSystemV2\\Order.cs",
@@ -50,7 +129,44 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminLogin.cs [Design]",
+              "DocumentMoniker": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\AdminLogin.cs",
+              "RelativeDocumentMoniker": "BorrowingSystemV2\\AdminLogin.cs",
+              "ToolTip": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\AdminLogin.cs [Design]",
+              "RelativeToolTip": "BorrowingSystemV2\\AdminLogin.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T09:02:41.701Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Dashboard.cs",
+              "DocumentMoniker": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\Dashboard.cs",
+              "RelativeDocumentMoniker": "BorrowingSystemV2\\Dashboard.cs",
+              "ToolTip": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\Dashboard.cs",
+              "RelativeToolTip": "BorrowingSystemV2\\Dashboard.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T09:02:06.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "LoginPage.cs [Design]",
+              "DocumentMoniker": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\LoginPage.cs",
+              "RelativeDocumentMoniker": "BorrowingSystemV2\\LoginPage.cs",
+              "ToolTip": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\LoginPage.cs [Design]",
+              "RelativeToolTip": "BorrowingSystemV2\\LoginPage.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-09T08:50:12.099Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Dashboard.cs [Design]",
               "DocumentMoniker": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\Dashboard.cs",
               "RelativeDocumentMoniker": "BorrowingSystemV2\\Dashboard.cs",
@@ -62,33 +178,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "LoginPage.cs",
               "DocumentMoniker": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\LoginPage.cs",
               "RelativeDocumentMoniker": "BorrowingSystemV2\\LoginPage.cs",
               "ToolTip": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\LoginPage.cs",
               "RelativeToolTip": "BorrowingSystemV2\\LoginPage.cs",
-              "ViewState": "AQIAADIAAAAAAAAAAAAnwEwAAAAMAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAWwBkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-09T06:01:59.346Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "StaffForm.cs",
               "DocumentMoniker": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\StaffForm.cs",
               "RelativeDocumentMoniker": "BorrowingSystemV2\\StaffForm.cs",
               "ToolTip": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\StaffForm.cs",
               "RelativeToolTip": "BorrowingSystemV2\\StaffForm.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAADwv3AAAABDAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFwAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-09T06:01:39.314Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 11,
               "Title": "StaffForm.cs [Design]",
               "DocumentMoniker": "D:\\Web Project\\Borrowing-System-V2\\BorrowingSystemV2\\BorrowingSystemV2\\StaffForm.cs",
               "RelativeDocumentMoniker": "BorrowingSystemV2\\StaffForm.cs",

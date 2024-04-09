@@ -268,6 +268,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffForm";
             this.Load += new System.EventHandler(this.StaffForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.StaffForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.StaffForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.StaffForm_MouseUp);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

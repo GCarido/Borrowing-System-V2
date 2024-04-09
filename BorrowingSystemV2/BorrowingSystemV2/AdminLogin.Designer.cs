@@ -120,6 +120,7 @@
             this.adminusertxtbox.Name = "adminusertxtbox";
             this.adminusertxtbox.Size = new System.Drawing.Size(238, 28);
             this.adminusertxtbox.TabIndex = 0;
+            this.adminusertxtbox.TextChanged += new System.EventHandler(this.adminusertxtbox_TextChanged);
             this.adminusertxtbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.adminusertxtbox_KeyDown);
             // 
             // hideButton

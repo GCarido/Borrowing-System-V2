@@ -137,5 +137,10 @@ namespace BorrowingSystemV2
         {
             loadform(new StaffLogin());
         }
+
+        private void adminusertxtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

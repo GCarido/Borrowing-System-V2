@@ -118,8 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="403.4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\403.4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="orderform1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orderform1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -129,6 +129,9 @@
   </data>
   <data name="Untitled design (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Untitled design (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orderform2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orderform2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="order icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\order icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,6 +145,9 @@
   <data name="Login layer 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login layer 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="settings icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="403.4 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\403.4 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,6 +156,9 @@
   </data>
   <data name="1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="403.4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\403.4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,6 +172,9 @@
   <data name="eye1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="orderform" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orderform.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="4031" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\403.41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -172,7 +184,7 @@
   <data name="eye2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eye2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="settings icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\settings icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="orderform3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orderform3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

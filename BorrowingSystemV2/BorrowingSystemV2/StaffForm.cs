@@ -13,6 +13,8 @@ namespace BorrowingSystemV2
 {
     public partial class StaffForm : Form
     {
+        private bool _dragging = false;
+        private Point _start_point = new Point(1, 0);
         public StaffForm()
         {
             InitializeComponent();
@@ -88,6 +90,7 @@ namespace BorrowingSystemV2
 
         private void orderBTN_Click(object sender, EventArgs e)
         {
+            loadform(new Order());
             staffFormPanel.Visible = true;
             homeBTN.BackColor = Color.FromArgb(233, 215, 174);
             homeBTN.ForeColor = Color.FromArgb(84, 84, 84);
@@ -152,6 +155,26 @@ namespace BorrowingSystemV2
             inventoryBTN.ForeColor = Color.FromArgb(84, 84, 84);
             logsBTN.BackColor = Color.FromArgb(233, 215, 174);
             logsBTN.ForeColor = Color.FromArgb(84, 84, 84);
+        }
+
+        private void StaffForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            _dragging = true;
+            _start_point = new Point(e.X, e.Y);
+        }
+
+        private void StaffForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (_dragging)
+            {
+                Point p = PointToScreen(e.Location);
+                Location = new Point(p.X - this._start_point.X, p.Y - this._start_point.Y);
+            }
+        }
+
+        private void StaffForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            _dragging = false;
         }
     }
 }

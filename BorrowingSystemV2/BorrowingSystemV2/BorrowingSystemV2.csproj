@@ -241,5 +241,17 @@
   <ItemGroup>
     <None Include="Resources\settings icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orderform.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orderform1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orderform2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orderform3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
