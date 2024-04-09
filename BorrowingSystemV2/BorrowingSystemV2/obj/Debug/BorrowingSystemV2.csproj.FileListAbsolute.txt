@@ -45,3 +45,5 @@ D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug
 D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.StaffForm.resources
 D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.Dashboard.resources
 D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.Order.resources
+D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.AdminForm.resources
+D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.AdminAccountManangement.resources

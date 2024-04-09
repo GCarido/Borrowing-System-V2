@@ -15,9 +15,9 @@ namespace BorrowingSystemV2
     public partial class AdminLogin : Form
     {
         public string mySqlServerName = "sql6.freemysqlhosting.net";
-        public string mySqlServerUserId = "sql6690575";
-        public string mySqlServerPassword = "WzrG9YgeeE";
-        public string mySqlDatabaseName = "sql6690575";
+        public string mySqlServerUserId = "sql6696982";
+        public string mySqlServerPassword = "DJyeU2QQMU";
+        public string mySqlDatabaseName = "sql6696982";
 
         public static AdminLogin instance;
         public Button login;

@@ -98,6 +98,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAccountManangement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAccountManangement.Designer.cs">
+      <DependentUpon>AdminAccountManangement.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,12 @@
     <Compile Include="StaffLogin.Designer.cs">
       <DependentUpon>StaffLogin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminAccountManangement.resx">
+      <DependentUpon>AdminAccountManangement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminLogin.resx">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +264,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\orderform3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\account management icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accntmanagement icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accmng icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\studentinfo icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\studentinfo icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\staffinfo icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admininfo icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
