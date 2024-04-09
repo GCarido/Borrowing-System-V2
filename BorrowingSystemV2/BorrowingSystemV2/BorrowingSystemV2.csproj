@@ -98,6 +98,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAccManagementPanels\AdminList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminAccManagementPanels\AdminList.Designer.cs">
+      <DependentUpon>AdminList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAccManagementPanels\StaffList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminAccManagementPanels\StaffList.Designer.cs">
+      <DependentUpon>StaffList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAccManagementPanels\StudentList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminAccManagementPanels\StudentList.Designer.cs">
+      <DependentUpon>StudentList.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminAccountManangement.cs">
       <SubType>Form</SubType>
     </Compile>
