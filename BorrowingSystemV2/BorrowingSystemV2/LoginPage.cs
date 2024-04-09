@@ -14,14 +14,36 @@ namespace BorrowingSystemV2
     {
         private bool _dragging = false;
         private Point _start_point = new Point(1, 0);
+        public static LoginPage instance;
         public LoginPage()
         {
             InitializeComponent();
+            instance = this;
         }
 
         private void LoginPage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public void loadform(object Form)
+        {
+            if (this.loginpanel.Controls.Count > 1)
+            {
+                this.loginpanel.Controls.RemoveAt(1);
+            }
+
+            Form f = Form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            this.loginpanel.Controls.Add(f);
+            this.loginpanel.Tag = f;
+            f.Show();
+        }
+
+        private void loginpanel_Paint(object sender, PaintEventArgs e)
+        {
+            loadform(new StaffLogin());
         }
 
         private void LoginPage_MouseDown(object sender, MouseEventArgs e)
@@ -43,6 +65,16 @@ namespace BorrowingSystemV2
         {
             _dragging = false;
 
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MinimizeButton_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
