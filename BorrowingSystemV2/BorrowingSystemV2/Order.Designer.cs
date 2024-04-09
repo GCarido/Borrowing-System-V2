@@ -92,7 +92,7 @@
             // 
             this.quantityTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.quantityTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantityTxtbx.Location = new System.Drawing.Point(473, 380);
+            this.quantityTxtbx.Location = new System.Drawing.Point(473, 381);
             this.quantityTxtbx.Multiline = true;
             this.quantityTxtbx.Name = "quantityTxtbx";
             this.quantityTxtbx.Size = new System.Drawing.Size(290, 36);
@@ -102,7 +102,7 @@
             // 
             this.equipmentNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.equipmentNameTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.equipmentNameTxtbx.Location = new System.Drawing.Point(473, 283);
+            this.equipmentNameTxtbx.Location = new System.Drawing.Point(473, 284);
             this.equipmentNameTxtbx.Multiline = true;
             this.equipmentNameTxtbx.Name = "equipmentNameTxtbx";
             this.equipmentNameTxtbx.Size = new System.Drawing.Size(290, 36);
@@ -112,7 +112,7 @@
             // 
             this.instructorNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.instructorNameTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.instructorNameTxtbx.Location = new System.Drawing.Point(473, 186);
+            this.instructorNameTxtbx.Location = new System.Drawing.Point(473, 187);
             this.instructorNameTxtbx.Multiline = true;
             this.instructorNameTxtbx.Name = "instructorNameTxtbx";
             this.instructorNameTxtbx.Size = new System.Drawing.Size(290, 36);
@@ -122,7 +122,7 @@
             // 
             this.subjectCodeTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.subjectCodeTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.subjectCodeTxtbx.Location = new System.Drawing.Point(473, 89);
+            this.subjectCodeTxtbx.Location = new System.Drawing.Point(473, 90);
             this.subjectCodeTxtbx.Multiline = true;
             this.subjectCodeTxtbx.Name = "subjectCodeTxtbx";
             this.subjectCodeTxtbx.Size = new System.Drawing.Size(290, 36);
@@ -132,7 +132,7 @@
             // 
             this.yearTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.yearTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.yearTxtbx.Location = new System.Drawing.Point(71, 380);
+            this.yearTxtbx.Location = new System.Drawing.Point(71, 381);
             this.yearTxtbx.Multiline = true;
             this.yearTxtbx.Name = "yearTxtbx";
             this.yearTxtbx.Size = new System.Drawing.Size(290, 36);
@@ -142,7 +142,7 @@
             // 
             this.courseTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.courseTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseTxtbx.Location = new System.Drawing.Point(71, 283);
+            this.courseTxtbx.Location = new System.Drawing.Point(71, 284);
             this.courseTxtbx.Multiline = true;
             this.courseTxtbx.Name = "courseTxtbx";
             this.courseTxtbx.Size = new System.Drawing.Size(290, 36);
@@ -152,7 +152,7 @@
             // 
             this.studentNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.studentNameTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentNameTxtbx.Location = new System.Drawing.Point(71, 186);
+            this.studentNameTxtbx.Location = new System.Drawing.Point(71, 187);
             this.studentNameTxtbx.Multiline = true;
             this.studentNameTxtbx.Name = "studentNameTxtbx";
             this.studentNameTxtbx.Size = new System.Drawing.Size(290, 36);
@@ -163,7 +163,7 @@
             this.studentIDTxtbx.BackColor = System.Drawing.Color.White;
             this.studentIDTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.studentIDTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.studentIDTxtbx.Location = new System.Drawing.Point(71, 89);
+            this.studentIDTxtbx.Location = new System.Drawing.Point(71, 91);
             this.studentIDTxtbx.Multiline = true;
             this.studentIDTxtbx.Name = "studentIDTxtbx";
             this.studentIDTxtbx.Size = new System.Drawing.Size(290, 36);
