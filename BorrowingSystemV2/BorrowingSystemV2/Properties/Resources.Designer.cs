@@ -153,6 +153,26 @@ namespace BorrowingSystemV2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Admin_invenotry {
+            get {
+                object obj = ResourceManager.GetObject("Admin invenotry", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Admin_invenotry__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Admin invenotry (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap admininfo_icon {
             get {
                 object obj = ResourceManager.GetObject("admininfo icon", resourceCulture);
