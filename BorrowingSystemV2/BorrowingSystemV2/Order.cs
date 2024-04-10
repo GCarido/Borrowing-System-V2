@@ -127,11 +127,12 @@ namespace BorrowingSystemV2
                     DateTime order_TIME = DateTime.Now;
                     MySqlCommand command = connection.CreateCommand();
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "INSERT INTO sql6696982.orders (subject_code, instructor_name, student_ID, staff_ID, order_DATE, order_TIME, equipment_id) VALUES (@subject_code, @instructor_name, @student_ID, @staff_ID, @order_DATE, @order_TIME, @equipment_id)";
+                    command.CommandText = "INSERT INTO sql6696982.orders (subject_code, instructor_name, student_ID, staff_ID, admin_ID, order_DATE, order_TIME, equipment_id) VALUES (@subject_code, @instructor_name, @student_ID, @staff_ID, @admin_id, @order_DATE, @order_TIME, @equipment_id)";
                     command.Parameters.AddWithValue("@subject_code", subjectCodeTxtbx.Text);
                     command.Parameters.AddWithValue("@instructor_name", instructorNameTxtbx.Text);
                     command.Parameters.AddWithValue("@student_ID", studentIDTxtbx.Text);
                     command.Parameters.AddWithValue("@staff_ID", StaffLogin.EmployeeID);
+                    command.Parameters.AddWithValue("@admin_ID", AdminLogin.EmployeeID);
                     command.Parameters.AddWithValue("@order_DATE", order_DATE.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@order_TIME", order_TIME.ToString("hh:mm:ss:tt"));
                     command.Parameters.AddWithValue("@equipment_id", equipmentId);
