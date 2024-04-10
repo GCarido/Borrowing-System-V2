@@ -51,6 +51,7 @@
             this.deleteBTN.TabIndex = 6;
             this.deleteBTN.Text = "Delete";
             this.deleteBTN.UseVisualStyleBackColor = false;
+            this.deleteBTN.Click += new System.EventHandler(this.deleteBTN_Click);
             // 
             // updateBTN
             // 
@@ -64,6 +65,7 @@
             this.updateBTN.TabIndex = 5;
             this.updateBTN.Text = "Update";
             this.updateBTN.UseVisualStyleBackColor = false;
+            this.updateBTN.Click += new System.EventHandler(this.updateBTN_Click);
             // 
             // createBTN
             // 
@@ -77,6 +79,7 @@
             this.createBTN.TabIndex = 4;
             this.createBTN.Text = "Create";
             this.createBTN.UseVisualStyleBackColor = false;
+            this.createBTN.Click += new System.EventHandler(this.createBTN_Click);
             // 
             // adminIDTxtbx
             // 
@@ -163,6 +166,7 @@
             this.DoubleBuffered = true;
             this.Name = "AdminList";
             this.Size = new System.Drawing.Size(508, 450);
+            this.Load += new System.EventHandler(this.AdminList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

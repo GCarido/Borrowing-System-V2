@@ -253,6 +253,16 @@ namespace BorrowingSystemV2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Logo (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logs_icon {
             get {
                 object obj = ResourceManager.GetObject("logs icon", resourceCulture);
@@ -306,6 +316,16 @@ namespace BorrowingSystemV2.Properties {
         internal static System.Drawing.Bitmap orderform3 {
             get {
                 object obj = ResourceManager.GetObject("orderform3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_icon {
+            get {
+                object obj = ResourceManager.GetObject("search icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -46,9 +46,10 @@
             this.deleteBTN.Location = new System.Drawing.Point(339, 360);
             this.deleteBTN.Name = "deleteBTN";
             this.deleteBTN.Size = new System.Drawing.Size(134, 57);
-            this.deleteBTN.TabIndex = 9;
+            this.deleteBTN.TabIndex = 5;
             this.deleteBTN.Text = "Delete";
             this.deleteBTN.UseVisualStyleBackColor = false;
+            this.deleteBTN.Click += new System.EventHandler(this.deleteBTN_Click);
             // 
             // updateBTN
             // 
@@ -59,9 +60,10 @@
             this.updateBTN.Location = new System.Drawing.Point(189, 360);
             this.updateBTN.Name = "updateBTN";
             this.updateBTN.Size = new System.Drawing.Size(134, 57);
-            this.updateBTN.TabIndex = 8;
+            this.updateBTN.TabIndex = 4;
             this.updateBTN.Text = "Update";
             this.updateBTN.UseVisualStyleBackColor = false;
+            this.updateBTN.Click += new System.EventHandler(this.updateBTN_Click);
             // 
             // createBTN
             // 
@@ -72,9 +74,10 @@
             this.createBTN.Location = new System.Drawing.Point(33, 360);
             this.createBTN.Name = "createBTN";
             this.createBTN.Size = new System.Drawing.Size(134, 57);
-            this.createBTN.TabIndex = 7;
+            this.createBTN.TabIndex = 3;
             this.createBTN.Text = "Create";
             this.createBTN.UseVisualStyleBackColor = false;
+            this.createBTN.Click += new System.EventHandler(this.createBTN_Click);
             // 
             // studentIDTxtbx
             // 
@@ -85,7 +88,7 @@
             this.studentIDTxtbx.Multiline = true;
             this.studentIDTxtbx.Name = "studentIDTxtbx";
             this.studentIDTxtbx.Size = new System.Drawing.Size(290, 36);
-            this.studentIDTxtbx.TabIndex = 11;
+            this.studentIDTxtbx.TabIndex = 0;
             // 
             // studentnameTxtbx
             // 
@@ -96,7 +99,7 @@
             this.studentnameTxtbx.Multiline = true;
             this.studentnameTxtbx.Name = "studentnameTxtbx";
             this.studentnameTxtbx.Size = new System.Drawing.Size(290, 36);
-            this.studentnameTxtbx.TabIndex = 12;
+            this.studentnameTxtbx.TabIndex = 1;
             // 
             // courseTxtbx
             // 
@@ -107,7 +110,7 @@
             this.courseTxtbx.Multiline = true;
             this.courseTxtbx.Name = "courseTxtbx";
             this.courseTxtbx.Size = new System.Drawing.Size(129, 36);
-            this.courseTxtbx.TabIndex = 13;
+            this.courseTxtbx.TabIndex = 2;
             // 
             // yearTxtbx
             // 
@@ -118,7 +121,7 @@
             this.yearTxtbx.Multiline = true;
             this.yearTxtbx.Name = "yearTxtbx";
             this.yearTxtbx.Size = new System.Drawing.Size(129, 36);
-            this.yearTxtbx.TabIndex = 14;
+            this.yearTxtbx.TabIndex = 2;
             // 
             // StudentList
             // 

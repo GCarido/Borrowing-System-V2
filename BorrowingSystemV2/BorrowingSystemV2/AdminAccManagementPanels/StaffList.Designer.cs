@@ -48,9 +48,10 @@
             this.deleteBTN.Location = new System.Drawing.Point(339, 360);
             this.deleteBTN.Name = "deleteBTN";
             this.deleteBTN.Size = new System.Drawing.Size(134, 57);
-            this.deleteBTN.TabIndex = 9;
+            this.deleteBTN.TabIndex = 8;
             this.deleteBTN.Text = "Delete";
             this.deleteBTN.UseVisualStyleBackColor = false;
+            this.deleteBTN.Click += new System.EventHandler(this.deleteBTN_Click);
             // 
             // updateBTN
             // 
@@ -61,9 +62,10 @@
             this.updateBTN.Location = new System.Drawing.Point(189, 360);
             this.updateBTN.Name = "updateBTN";
             this.updateBTN.Size = new System.Drawing.Size(134, 57);
-            this.updateBTN.TabIndex = 8;
+            this.updateBTN.TabIndex = 7;
             this.updateBTN.Text = "Update";
             this.updateBTN.UseVisualStyleBackColor = false;
+            this.updateBTN.Click += new System.EventHandler(this.updateBTN_Click);
             // 
             // createBTN
             // 
@@ -74,9 +76,10 @@
             this.createBTN.Location = new System.Drawing.Point(33, 360);
             this.createBTN.Name = "createBTN";
             this.createBTN.Size = new System.Drawing.Size(134, 57);
-            this.createBTN.TabIndex = 7;
+            this.createBTN.TabIndex = 6;
             this.createBTN.Text = "Create";
             this.createBTN.UseVisualStyleBackColor = false;
+            this.createBTN.Click += new System.EventHandler(this.createBTN_Click);
             // 
             // staffIDTxtbx
             // 
@@ -87,7 +90,7 @@
             this.staffIDTxtbx.Multiline = true;
             this.staffIDTxtbx.Name = "staffIDTxtbx";
             this.staffIDTxtbx.Size = new System.Drawing.Size(202, 36);
-            this.staffIDTxtbx.TabIndex = 13;
+            this.staffIDTxtbx.TabIndex = 0;
             // 
             // firstnameTxtbx
             // 
@@ -98,7 +101,7 @@
             this.firstnameTxtbx.Multiline = true;
             this.firstnameTxtbx.Name = "firstnameTxtbx";
             this.firstnameTxtbx.Size = new System.Drawing.Size(202, 36);
-            this.firstnameTxtbx.TabIndex = 14;
+            this.firstnameTxtbx.TabIndex = 2;
             // 
             // usernameTxtbx
             // 
@@ -109,7 +112,7 @@
             this.usernameTxtbx.Multiline = true;
             this.usernameTxtbx.Name = "usernameTxtbx";
             this.usernameTxtbx.Size = new System.Drawing.Size(202, 36);
-            this.usernameTxtbx.TabIndex = 15;
+            this.usernameTxtbx.TabIndex = 4;
             // 
             // positionTxtbx
             // 
@@ -120,7 +123,7 @@
             this.positionTxtbx.Multiline = true;
             this.positionTxtbx.Name = "positionTxtbx";
             this.positionTxtbx.Size = new System.Drawing.Size(202, 36);
-            this.positionTxtbx.TabIndex = 16;
+            this.positionTxtbx.TabIndex = 1;
             // 
             // lastnameTxtbx
             // 
@@ -131,7 +134,7 @@
             this.lastnameTxtbx.Multiline = true;
             this.lastnameTxtbx.Name = "lastnameTxtbx";
             this.lastnameTxtbx.Size = new System.Drawing.Size(202, 36);
-            this.lastnameTxtbx.TabIndex = 17;
+            this.lastnameTxtbx.TabIndex = 3;
             // 
             // passwordTxtbx
             // 
@@ -142,7 +145,7 @@
             this.passwordTxtbx.Multiline = true;
             this.passwordTxtbx.Name = "passwordTxtbx";
             this.passwordTxtbx.Size = new System.Drawing.Size(202, 36);
-            this.passwordTxtbx.TabIndex = 18;
+            this.passwordTxtbx.TabIndex = 5;
             // 
             // StaffList
             // 

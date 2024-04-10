@@ -96,3 +96,6 @@ C:\Users\Gerald\Desktop\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\
 C:\Users\Gerald\Desktop\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.csproj.CopyComplete
 C:\Users\Gerald\Desktop\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.exe
 C:\Users\Gerald\Desktop\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.pdb
+D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.AdminAccManagementPanels.AdminList.resources
+D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.AdminAccManagementPanels.StaffList.resources
+D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.AdminAccManagementPanels.StudentList.resources

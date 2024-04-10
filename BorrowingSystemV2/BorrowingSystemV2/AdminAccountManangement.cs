@@ -1,5 +1,6 @@
 ﻿using BorrowingSystemV2.AdminAccManagementPanels;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Bcpg.OpenPgp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +38,8 @@ namespace BorrowingSystemV2
         public static string adminUserName { get; set; }
         public static string adminPassword { get; set; }
         public static string adminPosition { get; set; }
+        
+        public static string adminDatagrid { get; set; }
 
         public AdminAccountManangement()
         {
@@ -137,6 +140,8 @@ namespace BorrowingSystemV2
                 adminPosition = adminData.Rows[e.RowIndex].Cells[5].Value.ToString();
                 adminList1.UpdateAdminInfo();
             }
+
+            
         }
 
         private void studentData_CellContentClick(object sender, DataGridViewCellEventArgs e)
