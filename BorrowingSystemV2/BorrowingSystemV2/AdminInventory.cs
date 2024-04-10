@@ -34,7 +34,46 @@ namespace BorrowingSystemV2
             adp.Fill(dt);
             adminInventoryData.DataSource = dt;
             searchDatas("");
+
             connection.Close();
+
+            
+        }
+
+        public void FillImage()
+        {
+            
+        }
+
+        private void insertimageBTN_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Choose Image(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
+
+            if (opf.ShowDialog() == DialogResult.OK)
+            {
+                equipmentImage.Image = Image.FromFile(opf.FileName);
+                equipmentImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void createBTN_Click(object sender, EventArgs e)
+        {
+            MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
+            connection.Open();
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO sql6696982.sample_image(images) VALUES(@images)", connection);
+            MemoryStream ms = new MemoryStream();
+            equipmentImage.Image.Save(ms, equipmentImage.Image.RawFormat);
+            byte[] img = ms.ToArray();
+            cmd.Parameters.AddWithValue("@images", MySqlDbType.MediumBlob);
+
+
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                MessageBox.Show("New Equipment has been added");
+            }
+            connection.Close();
+
         }
 
         private void searchBTN_Click_1(object sender, EventArgs e)
@@ -106,6 +145,13 @@ namespace BorrowingSystemV2
             conditionTxtbx.ReadOnly = true;
         }
 
+      
+
        
+
+        private void imageData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
     }
 }
