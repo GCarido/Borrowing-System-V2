@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using BorrowingSystemV2.AdminAccManagementPanels;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,9 +19,29 @@ namespace BorrowingSystemV2
         public string mySqlServerPassword = "DJyeU2QQMU";
         public string mySqlDatabaseName = "sql6696982";
 
+        public static string studentID { get; set; }
+        public static string studentName { get; set; }
+        public static string studentCourse { get; set; }
+        public static string studentYear { get; set; }
+
+        public static string staffID { get; set; }
+        public static string staffFName { get; set; }
+        public static string staffLName { get; set; }
+        public static string staffUserName { get; set; }
+        public static string staffPassword { get; set; }
+        public static string staffPosition { get; set; }
+
+        public static string adminID { get; set; }
+        public static string adminFName { get; set; }
+        public static string adminLName { get; set; }
+        public static string adminUserName { get; set; }
+        public static string adminPassword { get; set; }
+        public static string adminPosition { get; set; }
+
         public AdminAccountManangement()
         {
             InitializeComponent();
+            studentList1.BringToFront();
         }
 
         private void AdminAccountManangement_Load(object sender, EventArgs e)
@@ -53,106 +74,85 @@ namespace BorrowingSystemV2
 
         private void studentListBTN_Click(object sender, EventArgs e)
         {
-            studentData.Visible = true;
-            staffData.Visible = false;
-            adminData.Visible = false;
-
-            studentinfoPanel.Visible = true;
-            staffinfoPanel.Visible = false;
-            admininfoPanel.Visible = false;
-
-            studentListBTN.BackColor = Color.FromArgb(252, 168, 115);
-            studentListBTN.ForeColor = Color.Black;
+            studentList1.BringToFront();
             staffListBTN.BackColor = Color.FromArgb(233, 215, 174);
-            staffListBTN.ForeColor = Color.FromArgb(84, 84, 84);
+            studentListBTN.BackColor = Color.FromArgb(252, 168, 115);
             adminListBTN.BackColor = Color.FromArgb(233, 215, 174);
-            adminListBTN.ForeColor = Color.FromArgb(84, 84, 84);
+            studentData.BringToFront();
         }
 
         private void staffListBTN_Click(object sender, EventArgs e)
         {
-            studentData.Visible = false;
-            staffData.Visible = true;
-            adminData.Visible = false;
-
-
-            studentinfoPanel.Visible = false;
-            staffinfoPanel.Visible = true;
-            admininfoPanel.Visible = false;
-
-
+            staffList1.BringToFront();
             staffListBTN.BackColor = Color.FromArgb(252, 168, 115);
-            staffListBTN.ForeColor = Color.Black;
             studentListBTN.BackColor = Color.FromArgb(233, 215, 174);
-            studentListBTN.ForeColor = Color.FromArgb(84, 84, 84);
             adminListBTN.BackColor = Color.FromArgb(233, 215, 174);
-            adminListBTN.ForeColor = Color.FromArgb(84, 84, 84);
+            staffData.BringToFront();
         }
 
         private void adminListBTN_Click(object sender, EventArgs e)
         {
-            studentData.Visible = false;
-            staffData.Visible = false;
-            adminData.Visible = true;
-
-            studentinfoPanel.Visible = false;
-            staffinfoPanel.Visible = false;
-            admininfoPanel.Visible = true;
-
-            adminListBTN.BackColor = Color.FromArgb(252, 168, 115);
-            adminListBTN.ForeColor = Color.Black;
-            studentListBTN.BackColor = Color.FromArgb(233, 215, 174);
-            studentListBTN.ForeColor = Color.FromArgb(84, 84, 84);
+            adminList1.BringToFront();
             staffListBTN.BackColor = Color.FromArgb(233, 215, 174);
-            staffListBTN.ForeColor = Color.FromArgb(84, 84, 84);
+            studentListBTN.BackColor = Color.FromArgb(233, 215, 174);
+            adminListBTN.BackColor = Color.FromArgb(252, 168, 115);
+            adminData.BringToFront();
+        }
+
+        private void studentData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                studentID = studentData.Rows[e.RowIndex].Cells[0].Value.ToString();
+                studentName = studentData.Rows[e.RowIndex].Cells[1].Value.ToString();
+                studentCourse = studentData.Rows[e.RowIndex].Cells[2].Value.ToString();
+                studentYear = studentData.Rows[e.RowIndex].Cells[3].Value.ToString();
+                studentList1.UpdateStudentInfo();
+            }
+        }
+
+        private void staffData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                staffID = staffData.Rows[e.RowIndex].Cells[0].Value.ToString();
+                staffFName = staffData.Rows[e.RowIndex].Cells[1].Value.ToString();
+                staffLName = staffData.Rows[e.RowIndex].Cells[2].Value.ToString();
+                staffUserName = staffData.Rows[e.RowIndex].Cells[3].Value.ToString();
+                staffPassword = staffData.Rows[e.RowIndex].Cells[4].Value.ToString();
+                staffPosition = staffData.Rows[e.RowIndex].Cells[5].Value.ToString();
+                staffList1.UpdateStaffInfo();
+            }
+        }
+
+        private void adminData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                adminID = adminData.Rows[e.RowIndex].Cells[0].Value.ToString();
+                adminFName = adminData.Rows[e.RowIndex].Cells[1].Value.ToString();
+                adminLName = adminData.Rows[e.RowIndex].Cells[2].Value.ToString();
+                adminUserName = adminData.Rows[e.RowIndex].Cells[3].Value.ToString();
+                adminPassword = adminData.Rows[e.RowIndex].Cells[4].Value.ToString();
+                adminPosition = adminData.Rows[e.RowIndex].Cells[5].Value.ToString();
+                adminList1.UpdateAdminInfo();
+            }
         }
 
         private void studentData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = studentData.Rows[e.RowIndex];
 
-                studentIDTxtbx.Text = row.Cells["studentID"].Value.ToString();
-                studentnameTxtbx.Text = row.Cells["studentName"].Value.ToString();
-                courseTxtbx.Text = row.Cells["course"].Value.ToString();
-                yearTxtbx.Text = row.Cells["yearLevel"].Value.ToString();
-            }
         }
 
         private void staffData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = staffData.Rows[e.RowIndex];
 
-                staffIDTxtbx.Text = row.Cells["staffID"].Value.ToString();
-                firstnameTxtbx.Text = row.Cells["firstName"].Value.ToString();
-                lastnameTxtbx.Text = row.Cells["lastName"].Value.ToString(); 
-                usernameTxtbx.Text = row.Cells["username"].Value.ToString();
-                passwordTxtbx.Text = row.Cells["password_"].Value.ToString();
-                positionTxtbx.Text = row.Cells["position"].Value.ToString(); 
-            }
         }
 
         private void adminData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = adminData.Rows[e.RowIndex];
-
-                adminIDTxtbx.Text = row.Cells["adminID"].Value.ToString();
-                AfirstnameTxtbx.Text = row.Cells["firstName"].Value.ToString();
-                AlastnameTxtbx.Text = row.Cells["lastName"].Value.ToString();
-                AusernameTxtbx.Text = row.Cells["username"].Value.ToString();
-                ApasswordTxtbx.Text = row.Cells["password_"].Value.ToString();
-                ApositionTxtbx.Text = row.Cells["position"].Value.ToString();
-            }
-        }
-
-        private void admininfoPanel_Paint(object sender, PaintEventArgs e)
-        {
 
         }
+
     }
 }
