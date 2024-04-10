@@ -1,5 +1,6 @@
 ﻿using BorrowingSystemV2.AdminAccManagementPanels;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Bcpg.OpenPgp;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,8 @@ namespace BorrowingSystemV2
 {
     public partial class AdminAccountManangement : Form
     {
-        public string mySqlServerName = "sql6.freemysqlhosting.net";
-        public string mySqlServerUserId = "sql6696982";
-        public string mySqlServerPassword = "DJyeU2QQMU";
-        public string mySqlDatabaseName = "sql6696982";
-
+       
+      
         public static string studentID { get; set; }
         public static string studentName { get; set; }
         public static string studentCourse { get; set; }
@@ -47,12 +45,15 @@ namespace BorrowingSystemV2
             studentList1.BringToFront();
         }
 
+        public string mySqlServerName = "sql6.freemysqlhosting.net";
+        public string mySqlServerUserId = "sql6696982";
+        public string mySqlServerPassword = "DJyeU2QQMU";
+        public string mySqlDatabaseName = "sql6696982";
+       
         private void AdminAccountManangement_Load(object sender, EventArgs e)
         {
-
             MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
             connection.Open();
-
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM sql6696982.students", connection);
             MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -71,8 +72,76 @@ namespace BorrowingSystemV2
             adp.Fill(dt);
             adminData.DataSource = dt;
 
+            searchDatas("");
+
             connection.Close();
 
+        }
+
+        public void searchDatas(string Search)
+        {
+
+            if (studentListBTN.BackColor == Color.FromArgb(252, 168, 115))
+            {
+                 MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
+                 connection.Open();
+                 string searchQuery = "SELECT * FROM sql6696982.students WHERE CONCAT(`studentID`, `studentName`, `course`, `yearLevel`) like '%" + searchData.Text + "%'";
+                 MySqlCommand cmd = new MySqlCommand(searchQuery, connection);
+                 MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+                 DataTable dt = new DataTable();
+                 adp.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    studentData.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("Data not found.");
+                }
+            }
+            else if (staffListBTN.BackColor == Color.FromArgb(252, 168, 115))
+            {
+                MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
+                connection.Open();
+                string searchQuery = "SELECT * FROM sql6696982.employee_staff WHERE CONCAT(`staffID`, `firstname`, `lastname`, `username`, `password_`, `position`) like '%" + searchData.Text + "%'";
+                MySqlCommand cmd = new MySqlCommand(searchQuery, connection);
+                MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                   staffData.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("Data not found.");
+                }
+            }
+            else
+            {
+                MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
+                connection.Open();
+                string searchQuery = "SELECT * FROM sql6696982.employee_admin WHERE CONCAT(`adminID`, `firstname`, `lastname`, `username`, `password_`, `position`) like '%" + searchData.Text + "%'";
+                MySqlCommand cmd = new MySqlCommand(searchQuery, connection);
+                MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    adminData.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("Data not found.");
+                }
+            }
+            
+        }
+        private void searchBTN_Click(object sender, EventArgs e)
+        {
+            ;
+            string Search = searchData.Text.ToString();
+            searchDatas(Search);
         }
 
         private void studentListBTN_Click(object sender, EventArgs e)
@@ -159,5 +228,6 @@ namespace BorrowingSystemV2
 
         }
 
+        
     }
 }

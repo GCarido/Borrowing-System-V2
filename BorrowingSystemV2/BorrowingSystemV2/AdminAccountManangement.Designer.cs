@@ -36,11 +36,11 @@
             this.studentData = new System.Windows.Forms.DataGridView();
             this.staffData = new System.Windows.Forms.DataGridView();
             this.adminData = new System.Windows.Forms.DataGridView();
+            this.searchData = new System.Windows.Forms.TextBox();
+            this.searchBTN = new System.Windows.Forms.Button();
             this.studentList1 = new BorrowingSystemV2.AdminAccManagementPanels.StudentList();
             this.staffList1 = new BorrowingSystemV2.AdminAccManagementPanels.StaffList();
             this.adminList1 = new BorrowingSystemV2.AdminAccManagementPanels.AdminList();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.searchBTN = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffData)).BeginInit();
@@ -133,6 +133,28 @@
             this.adminData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adminData_CellClick);
             this.adminData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adminData_CellContentClick);
             // 
+            // searchData
+            // 
+            this.searchData.Location = new System.Drawing.Point(794, 99);
+            this.searchData.Multiline = true;
+            this.searchData.Name = "searchData";
+            this.searchData.Size = new System.Drawing.Size(303, 46);
+            this.searchData.TabIndex = 20;
+            // 
+            // searchBTN
+            // 
+            this.searchBTN.BackColor = System.Drawing.Color.Transparent;
+            this.searchBTN.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold);
+            this.searchBTN.ForeColor = System.Drawing.Color.Transparent;
+            this.searchBTN.Image = global::BorrowingSystemV2.Properties.Resources.Logo__1_;
+            this.searchBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.searchBTN.Location = new System.Drawing.Point(1100, 99);
+            this.searchBTN.Name = "searchBTN";
+            this.searchBTN.Size = new System.Drawing.Size(53, 46);
+            this.searchBTN.TabIndex = 21;
+            this.searchBTN.UseVisualStyleBackColor = false;
+            this.searchBTN.Click += new System.EventHandler(this.searchBTN_Click);
+            // 
             // studentList1
             // 
             this.studentList1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(199)))), ((int)(((byte)(230)))));
@@ -163,27 +185,6 @@
             this.adminList1.Size = new System.Drawing.Size(508, 450);
             this.adminList1.TabIndex = 19;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(794, 99);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(303, 46);
-            this.textBox1.TabIndex = 20;
-            // 
-            // searchBTN
-            // 
-            this.searchBTN.BackColor = System.Drawing.Color.Transparent;
-            this.searchBTN.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Bold);
-            this.searchBTN.ForeColor = System.Drawing.Color.Transparent;
-            this.searchBTN.Image = global::BorrowingSystemV2.Properties.Resources.Logo__1_;
-            this.searchBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.searchBTN.Location = new System.Drawing.Point(1100, 99);
-            this.searchBTN.Name = "searchBTN";
-            this.searchBTN.Size = new System.Drawing.Size(53, 46);
-            this.searchBTN.TabIndex = 21;
-            this.searchBTN.UseVisualStyleBackColor = false;
-            // 
             // AdminAccountManangement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,7 +192,7 @@
             this.BackgroundImage = global::BorrowingSystemV2.Properties.Resources.accmng_icon;
             this.ClientSize = new System.Drawing.Size(1532, 650);
             this.Controls.Add(this.searchBTN);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.searchData);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.studentList1);
             this.Controls.Add(this.staffList1);
@@ -223,7 +224,7 @@
         private AdminAccManagementPanels.StudentList studentList1;
         private AdminAccManagementPanels.StaffList staffList1;
         private AdminAccManagementPanels.AdminList adminList1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox searchData;
         private System.Windows.Forms.Button searchBTN;
     }
 }
