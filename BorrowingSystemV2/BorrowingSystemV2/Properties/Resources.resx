@@ -229,10 +229,15 @@
   <data name="Untitled design (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Untitled design (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="return2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\return2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="return3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\return3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="Admin invenotry (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Admin invenotry (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> 298ac90052346f1635d4c9c1253e7f4b6f6ba3bf
   </data>
 </root>

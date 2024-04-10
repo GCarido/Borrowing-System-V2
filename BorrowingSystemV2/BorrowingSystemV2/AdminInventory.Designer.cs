@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.adminInventoryData = new System.Windows.Forms.DataGridView();
             this.equipmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,24 +49,28 @@
             this.deleteBTN = new System.Windows.Forms.Button();
             this.doneBTN = new System.Windows.Forms.Button();
             this.editBTN = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.equipmentImage = new System.Windows.Forms.PictureBox();
+            this.imageData = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.adminInventoryData)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipmentImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageData)).BeginInit();
             this.SuspendLayout();
             // 
             // adminInventoryData
             // 
             this.adminInventoryData.AllowUserToAddRows = false;
             this.adminInventoryData.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Gadugi", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.adminInventoryData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Gadugi", 12F);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.adminInventoryData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.adminInventoryData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adminInventoryData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.equipmentID,
@@ -77,14 +81,14 @@
             this.adminInventoryData.Location = new System.Drawing.Point(545, 114);
             this.adminInventoryData.Name = "adminInventoryData";
             this.adminInventoryData.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.adminInventoryData.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.adminInventoryData.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.adminInventoryData.RowHeadersVisible = false;
             this.adminInventoryData.Size = new System.Drawing.Size(881, 457);
             this.adminInventoryData.TabIndex = 15;
@@ -227,6 +231,7 @@
             this.createBTN.Text = "Create";
             this.createBTN.UseVisualStyleBackColor = false;
             this.createBTN.Visible = false;
+            this.createBTN.Click += new System.EventHandler(this.createBTN_Click);
             // 
             // insertimageBTN
             // 
@@ -242,6 +247,7 @@
             this.insertimageBTN.Text = "Insert Image";
             this.insertimageBTN.UseVisualStyleBackColor = false;
             this.insertimageBTN.Visible = false;
+            this.insertimageBTN.Click += new System.EventHandler(this.insertimageBTN_Click);
             // 
             // updateBTN
             // 
@@ -304,14 +310,39 @@
             this.editBTN.UseVisualStyleBackColor = false;
             this.editBTN.Click += new System.EventHandler(this.editBTN_Click);
             // 
-            // pictureBox1
+            // equipmentImage
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(54, 37);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(356, 142);
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
+            this.equipmentImage.BackColor = System.Drawing.Color.Transparent;
+            this.equipmentImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.equipmentImage.Location = new System.Drawing.Point(54, 37);
+            this.equipmentImage.Name = "equipmentImage";
+            this.equipmentImage.Size = new System.Drawing.Size(356, 142);
+            this.equipmentImage.TabIndex = 22;
+            this.equipmentImage.TabStop = false;
+            // 
+            // imageData
+            // 
+            this.imageData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.imageData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column2,
+            this.Column1});
+            this.imageData.Location = new System.Drawing.Point(629, 225);
+            this.imageData.Name = "imageData";
+            this.imageData.Size = new System.Drawing.Size(287, 211);
+            this.imageData.TabIndex = 23;
+            this.imageData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.imageData_CellClick);
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "idsample_image";
+            this.Column2.HeaderText = "Id";
+            this.Column2.Name = "Column2";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "images";
+            this.Column1.HeaderText = "Image";
+            this.Column1.Name = "Column1";
             // 
             // AdminInventory
             // 
@@ -319,7 +350,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BorrowingSystemV2.Properties.Resources.Admin_invenotry__1_;
             this.ClientSize = new System.Drawing.Size(1532, 650);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.imageData);
+            this.Controls.Add(this.equipmentImage);
             this.Controls.Add(this.editBTN);
             this.Controls.Add(this.doneBTN);
             this.Controls.Add(this.deleteBTN);
@@ -339,7 +371,8 @@
             this.Text = "AdminInventory";
             this.Load += new System.EventHandler(this.AdminInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.adminInventoryData)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipmentImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,6 +399,9 @@
         private System.Windows.Forms.Button deleteBTN;
         private System.Windows.Forms.Button doneBTN;
         private System.Windows.Forms.Button editBTN;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox equipmentImage;
+        private System.Windows.Forms.DataGridView imageData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewImageColumn Column1;
     }
 }
