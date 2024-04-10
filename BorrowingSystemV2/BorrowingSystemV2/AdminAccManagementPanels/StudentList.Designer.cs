@@ -128,7 +128,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(199)))), ((int)(((byte)(230)))));
-            this.BackgroundImage = global::BorrowingSystemV2.Properties.Resources.studentinfo_icon;
+            this.BackgroundImage = global::BorrowingSystemV2.Properties.Resources.studentinfo_icon1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.Controls.Add(this.yearTxtbx);
             this.Controls.Add(this.courseTxtbx);

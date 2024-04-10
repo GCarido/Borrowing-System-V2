@@ -99,3 +99,5 @@ C:\Users\Gerald\Desktop\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\
 D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.AdminAccManagementPanels.AdminList.resources
 D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.AdminAccManagementPanels.StaffList.resources
 D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.AdminAccManagementPanels.StudentList.resources
+D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.AdminInventory.resources
+D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.StaffInventory.resources

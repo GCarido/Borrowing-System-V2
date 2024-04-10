@@ -139,7 +139,6 @@ namespace BorrowingSystemV2
         }
         private void searchBTN_Click(object sender, EventArgs e)
         {
-            ;
             string Search = searchData.Text.ToString();
             searchDatas(Search);
         }
