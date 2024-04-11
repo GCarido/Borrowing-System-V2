@@ -155,3 +155,4 @@ C:\Users\Gerald\Desktop\Personal Files\2nd Sem Files\CPE460 - On the Job Trainin
 C:\Users\Gerald\Desktop\Personal Files\2nd Sem Files\CPE460 - On the Job Training\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.csproj.CopyComplete
 C:\Users\Gerald\Desktop\Personal Files\2nd Sem Files\CPE460 - On the Job Training\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.exe
 C:\Users\Gerald\Desktop\Personal Files\2nd Sem Files\CPE460 - On the Job Training\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.pdb
+C:\Users\Gerald\Desktop\Personal Files\2nd Sem Files\CPE460 - On the Job Training\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.AddNotes.resources

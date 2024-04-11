@@ -148,15 +148,35 @@ namespace BorrowingSystemV2
 
                 if (MessageBox.Show("Are you sure you want to return the item?", "Return Item", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
+                    //SHOW NOTES FORM
+                    AddNotes addnote = new AddNotes();
+                    addnote.ShowDialog();
+
+                    //if (AddNotes.Notes == null || AddNotes.Quantity == null)
+                    //{
+                    //    return;
+                    //}
+
                     //CODE FOR INSERT
+                    DateTime return_DATE = DateTime.Now;
+                    DateTime return_TIME = DateTime.Now;
                     MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
                     connection.Open();
-                    MySqlCommand cmd = new MySqlCommand("INSERT INTO sql6696982.logs_ (order_ID, return_DATE, return_TIME) VALUES (" + dashboardTable.Rows[e.RowIndex].Cells[0].Value.ToString() + ", CURDATE(), CURTIME())", connection);
+                    MySqlCommand cmd = new MySqlCommand($"INSERT INTO sql6696982.logs_ (order_ID, notes, return_DATE, return_TIME) VALUES ({dashboardTable.Rows[e.RowIndex].Cells[0].Value.ToString()}, '{AddNotes.Notes}', @returnDate, @returnTime)", connection);
+                    cmd.Parameters.AddWithValue("@returnDate", return_DATE);
+                    cmd.Parameters.AddWithValue("@returnTime", return_TIME);
                     cmd.ExecuteNonQuery();
 
                     //Code to Update the status of the order into "Returned"
-                    MySqlCommand cmd2 = new MySqlCommand("UPDATE sql6696982.orders SET status_ = 'Returned' WHERE orderID = " + dashboardTable.Rows[e.RowIndex].Cells[0].Value.ToString(), connection);
+                    string orderID = dashboardTable.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    MySqlCommand cmd2 = new MySqlCommand($"UPDATE sql6696982.orders SET status_ = 'Returned' WHERE orderID = {orderID}", connection);
                     cmd2.ExecuteNonQuery();
+
+                    //Code to Update the inventory based on the equipmentID borrowed
+                    string equipmentName = dashboardTable.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    MySqlCommand cmd3 = new MySqlCommand($"UPDATE sql6696982.inventory SET quantity = quantity + {AddNotes.Quantity} WHERE equipmentName = '{equipmentName}'", connection);
+                    cmd3.ExecuteNonQuery();
+
                     connection.Close();
 
                     //REFRESH DATAGRIDVIEW
@@ -176,6 +196,7 @@ namespace BorrowingSystemV2
                     adp.Fill(dt);
                     dashboardTable.DataSource = dt;
                     connection.Close();
+                    MessageBox.Show("Item has been returned successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {

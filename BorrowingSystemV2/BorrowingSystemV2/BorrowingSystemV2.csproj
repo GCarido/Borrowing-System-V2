@@ -98,6 +98,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNotes.Designer.cs">
+      <DependentUpon>AddNotes.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminAccManagementPanels\AdminList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     <Compile Include="StaffLogin.Designer.cs">
       <DependentUpon>StaffLogin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNotes.resx">
+      <DependentUpon>AddNotes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminAccManagementPanels\AdminList.resx">
       <DependentUpon>AdminList.cs</DependentUpon>
     </EmbeddedResource>
