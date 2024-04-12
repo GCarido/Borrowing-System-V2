@@ -98,6 +98,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNotes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNotes.Designer.cs">
+      <DependentUpon>AddNotes.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminAccManagementPanels\AdminList.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     <Compile Include="StaffLogin.Designer.cs">
       <DependentUpon>StaffLogin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNotes.resx">
+      <DependentUpon>AddNotes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminAccManagementPanels\AdminList.resx">
       <DependentUpon>AdminList.cs</DependentUpon>
     </EmbeddedResource>
@@ -354,6 +363,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Admin invenotry %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return31.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

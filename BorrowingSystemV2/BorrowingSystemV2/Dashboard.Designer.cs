@@ -33,18 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dashboardTable = new System.Windows.Forms.DataGridView();
-            this.id_number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrowed_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrower_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subject_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.course_and_year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrowed_equipment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quality = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrowed_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrowed_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employee_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.instructor_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adminFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.staffFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order_TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardTable)).BeginInit();
@@ -73,23 +70,20 @@
             this.dashboardTable.ColumnHeadersHeight = 50;
             this.dashboardTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dashboardTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_number,
-            this.borrowed_id,
-            this.borrower_name,
+            this.orderID,
             this.subject_code,
-            this.course_and_year,
-            this.Column1,
-            this.borrowed_equipment,
-            this.quantity,
-            this.quality,
-            this.borrowed_date,
-            this.borrowed_time,
-            this.employee_name,
+            this.instructor_name,
+            this.equipmentName,
+            this.studentName,
+            this.adminFullname,
+            this.staffFullname,
+            this.order_DATE,
+            this.order_TIME,
             this.status_});
             this.dashboardTable.EnableHeadersVisualStyles = false;
             this.dashboardTable.GridColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dashboardTable.Location = new System.Drawing.Point(13, 101);
-            this.dashboardTable.Margin = new System.Windows.Forms.Padding(2);
+            this.dashboardTable.Location = new System.Drawing.Point(17, 124);
+            this.dashboardTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dashboardTable.Name = "dashboardTable";
             this.dashboardTable.ReadOnly = true;
             this.dashboardTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -114,127 +108,123 @@
             this.dashboardTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dashboardTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dashboardTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dashboardTable.Size = new System.Drawing.Size(1492, 524);
+            this.dashboardTable.Size = new System.Drawing.Size(1989, 645);
             this.dashboardTable.TabIndex = 2;
+            this.dashboardTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dashboardTable_CellClick);
             this.dashboardTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dashboardTable_CellContentClick);
+            this.dashboardTable.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dashboardTable_CellMouseEnter);
+            this.dashboardTable.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dashboardTable_CellMouseLeave);
+            this.dashboardTable.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dashboardTable_CellPainting);
             // 
-            // id_number
+            // orderID
             // 
-            this.id_number.DataPropertyName = "orderID";
-            this.id_number.HeaderText = "Order ID";
-            this.id_number.Name = "id_number";
-            this.id_number.ReadOnly = true;
-            // 
-            // borrowed_id
-            // 
-            this.borrowed_id.DataPropertyName = "studentID";
-            this.borrowed_id.HeaderText = "Student ID";
-            this.borrowed_id.Name = "borrowed_id";
-            this.borrowed_id.ReadOnly = true;
-            // 
-            // borrower_name
-            // 
-            this.borrower_name.DataPropertyName = "studentName";
-            this.borrower_name.HeaderText = "Borrower Name";
-            this.borrower_name.Name = "borrower_name";
-            this.borrower_name.ReadOnly = true;
+            this.orderID.DataPropertyName = "orderID";
+            this.orderID.HeaderText = "Order ID";
+            this.orderID.MinimumWidth = 6;
+            this.orderID.Name = "orderID";
+            this.orderID.ReadOnly = true;
             // 
             // subject_code
             // 
             this.subject_code.DataPropertyName = "subject_code";
             this.subject_code.HeaderText = "Subject Code";
+            this.subject_code.MinimumWidth = 6;
             this.subject_code.Name = "subject_code";
             this.subject_code.ReadOnly = true;
             // 
-            // course_and_year
+            // instructor_name
             // 
-            this.course_and_year.DataPropertyName = "course";
-            this.course_and_year.HeaderText = "Course";
-            this.course_and_year.Name = "course_and_year";
-            this.course_and_year.ReadOnly = true;
+            this.instructor_name.DataPropertyName = "instructor_name";
+            this.instructor_name.HeaderText = "Instructor Name";
+            this.instructor_name.MinimumWidth = 6;
+            this.instructor_name.Name = "instructor_name";
+            this.instructor_name.ReadOnly = true;
             // 
-            // Column1
+            // equipmentName
             // 
-            this.Column1.DataPropertyName = "yearLevel";
-            this.Column1.HeaderText = "Year Level";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.equipmentName.DataPropertyName = "equipmentName";
+            this.equipmentName.HeaderText = "Equipment Name";
+            this.equipmentName.MinimumWidth = 6;
+            this.equipmentName.Name = "equipmentName";
+            this.equipmentName.ReadOnly = true;
             // 
-            // borrowed_equipment
+            // studentName
             // 
-            this.borrowed_equipment.DataPropertyName = "equipmentName";
-            this.borrowed_equipment.HeaderText = "Borrowed Equipment";
-            this.borrowed_equipment.Name = "borrowed_equipment";
-            this.borrowed_equipment.ReadOnly = true;
+            this.studentName.DataPropertyName = "studentName";
+            this.studentName.HeaderText = "Student Name";
+            this.studentName.MinimumWidth = 6;
+            this.studentName.Name = "studentName";
+            this.studentName.ReadOnly = true;
             // 
-            // quantity
+            // adminFullname
             // 
-            this.quantity.DataPropertyName = "quantity";
-            this.quantity.HeaderText = "Quantity";
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
+            this.adminFullname.DataPropertyName = "adminFullname";
+            this.adminFullname.HeaderText = "Admin Name";
+            this.adminFullname.MinimumWidth = 6;
+            this.adminFullname.Name = "adminFullname";
+            this.adminFullname.ReadOnly = true;
             // 
-            // quality
+            // staffFullname
             // 
-            this.quality.DataPropertyName = "condition_";
-            this.quality.HeaderText = "Condition";
-            this.quality.Name = "quality";
-            this.quality.ReadOnly = true;
+            this.staffFullname.DataPropertyName = "staffFullname";
+            this.staffFullname.HeaderText = "Staff Name";
+            this.staffFullname.MinimumWidth = 6;
+            this.staffFullname.Name = "staffFullname";
+            this.staffFullname.ReadOnly = true;
             // 
-            // borrowed_date
+            // order_DATE
             // 
-            this.borrowed_date.DataPropertyName = "order_DATE";
+            this.order_DATE.DataPropertyName = "order_DATE";
             dataGridViewCellStyle2.Format = "d";
             dataGridViewCellStyle2.NullValue = null;
-            this.borrowed_date.DefaultCellStyle = dataGridViewCellStyle2;
-            this.borrowed_date.HeaderText = "Borrowed Date";
-            this.borrowed_date.Name = "borrowed_date";
-            this.borrowed_date.ReadOnly = true;
+            this.order_DATE.DefaultCellStyle = dataGridViewCellStyle2;
+            this.order_DATE.HeaderText = "Order Date";
+            this.order_DATE.MinimumWidth = 6;
+            this.order_DATE.Name = "order_DATE";
+            this.order_DATE.ReadOnly = true;
             // 
-            // borrowed_time
+            // order_TIME
             // 
-            this.borrowed_time.DataPropertyName = "order_TIME";
+            this.order_TIME.DataPropertyName = "order_TIME";
             dataGridViewCellStyle3.Format = "T";
             dataGridViewCellStyle3.NullValue = null;
-            this.borrowed_time.DefaultCellStyle = dataGridViewCellStyle3;
-            this.borrowed_time.HeaderText = "Borrowed Time";
-            this.borrowed_time.Name = "borrowed_time";
-            this.borrowed_time.ReadOnly = true;
-            // 
-            // employee_name
-            // 
-            this.employee_name.DataPropertyName = "firstname";
-            this.employee_name.HeaderText = "Employee Name";
-            this.employee_name.Name = "employee_name";
-            this.employee_name.ReadOnly = true;
+            this.order_TIME.DefaultCellStyle = dataGridViewCellStyle3;
+            this.order_TIME.HeaderText = "Order Time";
+            this.order_TIME.MinimumWidth = 6;
+            this.order_TIME.Name = "order_TIME";
+            this.order_TIME.ReadOnly = true;
             // 
             // status_
             // 
             this.status_.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.status_.DataPropertyName = "status";
+            this.status_.DataPropertyName = "status_";
             this.status_.HeaderText = "Status";
+            this.status_.MinimumWidth = 6;
             this.status_.Name = "status_";
             this.status_.ReadOnly = true;
             this.status_.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.status_.Width = 79;
+            this.status_.Width = 95;
             // 
             // vScrollBar1
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(1505, 101);
+            this.vScrollBar1.Location = new System.Drawing.Point(2007, 124);
             this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 524);
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 645);
             this.vScrollBar1.TabIndex = 4;
+            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1532, 650);
+            this.ClientSize = new System.Drawing.Size(1942, 800);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.dashboardTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dashboardTable)).EndInit();
             this.ResumeLayout(false);
 
@@ -243,19 +233,16 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dashboardTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn borrowed_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn borrower_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subject_code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn course_and_year;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn borrowed_equipment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quality;
-        private System.Windows.Forms.DataGridViewTextBoxColumn borrowed_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn borrowed_time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employee_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status_;
         private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subject_code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn instructor_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adminFullname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffFullname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn order_DATE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn order_TIME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status_;
     }
 }
