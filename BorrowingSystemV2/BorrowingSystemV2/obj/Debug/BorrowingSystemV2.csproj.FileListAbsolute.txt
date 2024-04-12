@@ -156,3 +156,8 @@ C:\Users\Gerald\Desktop\Personal Files\2nd Sem Files\CPE460 - On the Job Trainin
 C:\Users\Gerald\Desktop\Personal Files\2nd Sem Files\CPE460 - On the Job Training\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.exe
 C:\Users\Gerald\Desktop\Personal Files\2nd Sem Files\CPE460 - On the Job Training\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.pdb
 C:\Users\Gerald\Desktop\Personal Files\2nd Sem Files\CPE460 - On the Job Training\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.AddNotes.resources
+D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\bin\Debug\BorrowingSystemV2.exe.manifest
+D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\bin\Debug\BorrowingSystemV2.application
+D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.AddNotes.resources
+D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.exe.manifest
+D:\Web Project\Borrowing-System-V2\BorrowingSystemV2\BorrowingSystemV2\obj\Debug\BorrowingSystemV2.application

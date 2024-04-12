@@ -41,7 +41,7 @@ namespace BorrowingSystemV2
 
             MySqlCommand cmd = new MySqlCommand("SELECT orders.orderID, orders.subject_code, " +
                 "orders.instructor_name, inventory.equipmentName, students.studentName, " +
-                "CONCAT(employee_admin.firstname, ' ', employee_admin.lastname) AS adminFullname, " +
+               // "CONCAT(employee_admin.firstname, ' ', employee_admin.lastname) AS adminFullname, " +
                 "CONCAT(employee_staff.firstname, ' ', employee_staff.lastname) AS staffFullname, " +
                 "orders.order_DATE, orders.order_TIME, orders.status_ FROM orders " +
                 "INNER JOIN inventory ON orders.equipment_ID = inventory.equipmentID " +
@@ -112,7 +112,7 @@ namespace BorrowingSystemV2
             if (e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == 9)
+            if (e.ColumnIndex == 8)
             {
 
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
@@ -138,7 +138,7 @@ namespace BorrowingSystemV2
             if (e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == 9)
+            if (e.ColumnIndex == 8)
             {
 
                 //Change Image when selected
@@ -183,7 +183,7 @@ namespace BorrowingSystemV2
                     connection.Open();
                     MySqlCommand cmd1 = new MySqlCommand("SELECT orders.orderID, orders.subject_code, " +
                         "orders.instructor_name, inventory.equipmentName, students.studentName, " +
-                        "CONCAT(employee_admin.firstname, ' ', employee_admin.lastname) AS adminFullname, " +
+                        //"CONCAT(employee_admin.firstname, ' ', employee_admin.lastname) AS adminFullname, " +
                         "CONCAT(employee_staff.firstname, ' ', employee_staff.lastname) AS staffFullname, " +
                         "orders.order_DATE, orders.order_TIME, orders.status_ FROM orders " +
                         "INNER JOIN inventory ON orders.equipment_ID = inventory.equipmentID " +

@@ -53,11 +53,6 @@ namespace BorrowingSystemV2
                     }
                 }
             }
-        }
-
-        private void closeBtn_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
+        } 
     }
 }

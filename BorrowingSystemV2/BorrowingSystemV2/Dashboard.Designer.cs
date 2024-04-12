@@ -33,17 +33,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dashboardTable = new System.Windows.Forms.DataGridView();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.orderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subject_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.instructor_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adminFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.staffFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,19 +70,18 @@
             this.dashboardTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dashboardTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.orderID,
+            this.studentName,
             this.subject_code,
             this.instructor_name,
             this.equipmentName,
-            this.studentName,
-            this.adminFullname,
             this.staffFullname,
             this.order_DATE,
             this.order_TIME,
             this.status_});
             this.dashboardTable.EnableHeadersVisualStyles = false;
             this.dashboardTable.GridColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dashboardTable.Location = new System.Drawing.Point(17, 124);
-            this.dashboardTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dashboardTable.Location = new System.Drawing.Point(13, 101);
+            this.dashboardTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dashboardTable.Name = "dashboardTable";
             this.dashboardTable.ReadOnly = true;
             this.dashboardTable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -108,13 +106,21 @@
             this.dashboardTable.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dashboardTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dashboardTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dashboardTable.Size = new System.Drawing.Size(1989, 645);
+            this.dashboardTable.Size = new System.Drawing.Size(1490, 524);
             this.dashboardTable.TabIndex = 2;
             this.dashboardTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dashboardTable_CellClick);
             this.dashboardTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dashboardTable_CellContentClick);
             this.dashboardTable.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dashboardTable_CellMouseEnter);
             this.dashboardTable.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dashboardTable_CellMouseLeave);
             this.dashboardTable.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dashboardTable_CellPainting);
+            // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(1505, 101);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 524);
+            this.vScrollBar1.TabIndex = 4;
+            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
             // 
             // orderID
             // 
@@ -123,6 +129,14 @@
             this.orderID.MinimumWidth = 6;
             this.orderID.Name = "orderID";
             this.orderID.ReadOnly = true;
+            // 
+            // studentName
+            // 
+            this.studentName.DataPropertyName = "studentName";
+            this.studentName.HeaderText = "Student Name";
+            this.studentName.MinimumWidth = 6;
+            this.studentName.Name = "studentName";
+            this.studentName.ReadOnly = true;
             // 
             // subject_code
             // 
@@ -147,22 +161,6 @@
             this.equipmentName.MinimumWidth = 6;
             this.equipmentName.Name = "equipmentName";
             this.equipmentName.ReadOnly = true;
-            // 
-            // studentName
-            // 
-            this.studentName.DataPropertyName = "studentName";
-            this.studentName.HeaderText = "Student Name";
-            this.studentName.MinimumWidth = 6;
-            this.studentName.Name = "studentName";
-            this.studentName.ReadOnly = true;
-            // 
-            // adminFullname
-            // 
-            this.adminFullname.DataPropertyName = "adminFullname";
-            this.adminFullname.HeaderText = "Admin Name";
-            this.adminFullname.MinimumWidth = 6;
-            this.adminFullname.Name = "adminFullname";
-            this.adminFullname.ReadOnly = true;
             // 
             // staffFullname
             // 
@@ -203,25 +201,16 @@
             this.status_.Name = "status_";
             this.status_.ReadOnly = true;
             this.status_.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.status_.Width = 95;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(2007, 124);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 645);
-            this.vScrollBar1.TabIndex = 4;
-            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
+            this.status_.Width = 79;
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1942, 800);
-            this.Controls.Add(this.vScrollBar1);
+            this.ClientSize = new System.Drawing.Size(1534, 666);
             this.Controls.Add(this.dashboardTable);
+            this.Controls.Add(this.vScrollBar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
@@ -235,11 +224,10 @@
         private System.Windows.Forms.DataGridView dashboardTable;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn subject_code;
         private System.Windows.Forms.DataGridViewTextBoxColumn instructor_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn equipmentName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studentName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn adminFullname;
         private System.Windows.Forms.DataGridViewTextBoxColumn staffFullname;
         private System.Windows.Forms.DataGridViewTextBoxColumn order_DATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn order_TIME;

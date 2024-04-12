@@ -39,9 +39,36 @@ namespace BorrowingSystemV2
             return true;
         }
 
+
+        private void Order_Load(object sender, EventArgs e)
+        {
+            try
+            {
+
+           
+                MySqlConnection connection = new MySqlConnection($"datasource={mySqlServerName};port=3306;username={mySqlServerUserId};password={mySqlServerPassword};database={mySqlDatabaseName}");
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT equipmentName, quantity FROM sql6696982.inventory WHERE quantity>0", connection);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    string eqName = reader.GetString("equipmentName");
+                   int eqQuan = reader.GetInt16("quantity");
+                    string display = $"{eqName}";
+                    equipmentName.Items.Add(display);
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }  
+           
+        }
+
         private void submitOrderBTN_Click(object sender, EventArgs e)
         {
-            if (studentIDTxtbx.Text == "" || subjectCodeTxtbx.Text == "" || instructorNameTxtbx.Text == "" || equipmentNameTxtbx.Text == "" || quantityTxtbx.Text == "")
+            if (studentIDTxtbx.Text == "" || subjectCodeTxtbx.Text == "" || instructorName.Text == "" || equipmentName.Text == "" || quantityTxtbx.Text == "")
             {
                 MessageBox.Show("Please provide all necessary information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -72,11 +99,12 @@ namespace BorrowingSystemV2
             reader.Read();
             reader.Close();
 
+          //  connection.Open();
             //Check if an Equipment Existed in the Database and store the Equipment ID
             MySqlCommand checkEquipmentCommand1 = connection.CreateCommand();
             checkEquipmentCommand1.CommandType = CommandType.Text;
-            checkEquipmentCommand1.CommandText = "SELECT equipmentID FROM sql6696982.inventory WHERE equipmentName = @equipment_name";
-            checkEquipmentCommand1.Parameters.AddWithValue("@equipment_name", equipmentNameTxtbx.Text);
+            checkEquipmentCommand1.CommandText = "SELECT equipmentID FROM sql6696982.inventory WHERE equipmentName = @equipmentName";
+            checkEquipmentCommand1.Parameters.AddWithValue("@equipmentName", equipmentName.Text);
             MySqlDataReader reader1 = checkEquipmentCommand1.ExecuteReader();
 
             if (!reader1.HasRows)
@@ -97,14 +125,7 @@ namespace BorrowingSystemV2
             checkQuantityCommand.Parameters.AddWithValue("@equipment_id", equipmentId);
             var currentQuantity = Convert.ToInt32(checkQuantityCommand.ExecuteScalar());
 
-
-           //If the current quantity is less than 0, show a MessageBox and stop
-           if (currentQuantity <= 0)
-            {
-                MessageBox.Show("There are no more items left in the inventory", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
+           
             //If the current quantity is less than the quantity the user wants to borrow, show a MessageBox and stop
             if (currentQuantity < Convert.ToInt32(quantityTxtbx.Text))
             {
@@ -129,22 +150,24 @@ namespace BorrowingSystemV2
                     command.CommandType = CommandType.Text;
                     command.CommandText = "INSERT INTO sql6696982.orders (subject_code, instructor_name, student_ID, staff_ID, admin_ID, order_DATE, order_TIME, equipment_id) VALUES (@subject_code, @instructor_name, @student_ID, @staff_ID, @admin_id, @order_DATE, @order_TIME, @equipment_id)";
                     command.Parameters.AddWithValue("@subject_code", subjectCodeTxtbx.Text);
-                    command.Parameters.AddWithValue("@instructor_name", instructorNameTxtbx.Text);
+                    command.Parameters.AddWithValue("@instructor_name", instructorName.Text);
                     command.Parameters.AddWithValue("@student_ID", studentIDTxtbx.Text);
                     command.Parameters.AddWithValue("@staff_ID", StaffLogin.EmployeeID);
                     command.Parameters.AddWithValue("@admin_ID", AdminLogin.EmployeeID);
                     command.Parameters.AddWithValue("@order_DATE", order_DATE.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@order_TIME", order_TIME.ToString("hh:mm:ss:tt"));
                     command.Parameters.AddWithValue("@equipment_id", equipmentId);
+                   // command.Parameters.AddWithValue("@quantity", quantityTxtbx.Text);
                     command.ExecuteNonQuery();
 
                     connection.Close();
                     studentIDTxtbx.Text = "";
                     subjectCodeTxtbx.Text = "";
-                    instructorNameTxtbx.Text = "";
-                    equipmentNameTxtbx.Text = "";
+                    instructorName.Text = "";
+                    equipmentName.Text = "";
                     quantityTxtbx.Text = "";
                     MessageBox.Show("Submitted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
                 }
             }
 
@@ -226,5 +249,7 @@ namespace BorrowingSystemV2
                 MessageBox.Show(ex.Message);
             }
         }
+
+       
     }
 }

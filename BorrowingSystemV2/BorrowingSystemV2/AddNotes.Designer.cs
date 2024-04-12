@@ -34,8 +34,8 @@
             this.notesTxt = new System.Windows.Forms.TextBox();
             this.submitBtn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.clearBtn = new System.Windows.Forms.Button();
             this.quantityTxt = new System.Windows.Forms.NumericUpDown();
+            this.clearBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.quantityTxt)).BeginInit();
             this.SuspendLayout();
@@ -106,27 +106,10 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(10, 10);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(380, 521);
             this.panel1.TabIndex = 6;
-            // 
-            // clearBtn
-            // 
-            this.clearBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.clearBtn.FlatAppearance.BorderSize = 0;
-            this.clearBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(168)))), ((int)(((byte)(115)))));
-            this.clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(168)))), ((int)(((byte)(115)))));
-            this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clearBtn.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearBtn.Location = new System.Drawing.Point(140, 442);
-            this.clearBtn.Name = "clearBtn";
-            this.clearBtn.Size = new System.Drawing.Size(107, 43);
-            this.clearBtn.TabIndex = 6;
-            this.clearBtn.Text = "Clear";
-            this.clearBtn.UseVisualStyleBackColor = false;
-            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // quantityTxt
             // 
@@ -136,12 +119,28 @@
             this.quantityTxt.Size = new System.Drawing.Size(120, 35);
             this.quantityTxt.TabIndex = 7;
             // 
+            // clearBtn
+            // 
+            this.clearBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.clearBtn.FlatAppearance.BorderSize = 0;
+            this.clearBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(168)))), ((int)(((byte)(115)))));
+            this.clearBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(168)))), ((int)(((byte)(115)))));
+            this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearBtn.Font = new System.Drawing.Font("Gadugi", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearBtn.Location = new System.Drawing.Point(133, 442);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(107, 43);
+            this.clearBtn.TabIndex = 6;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = false;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
             // AddNotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(199)))), ((int)(((byte)(230)))));
-            this.ClientSize = new System.Drawing.Size(400, 541);
+            this.ClientSize = new System.Drawing.Size(380, 521);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddNotes";

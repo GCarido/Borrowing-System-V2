@@ -32,13 +32,14 @@
             this.submitOrderBTN = new System.Windows.Forms.Button();
             this.clearpanel = new System.Windows.Forms.Panel();
             this.quantityTxtbx = new System.Windows.Forms.TextBox();
-            this.equipmentNameTxtbx = new System.Windows.Forms.TextBox();
-            this.instructorNameTxtbx = new System.Windows.Forms.TextBox();
             this.subjectCodeTxtbx = new System.Windows.Forms.TextBox();
             this.yearTxtbx = new System.Windows.Forms.TextBox();
             this.courseTxtbx = new System.Windows.Forms.TextBox();
             this.studentNameTxtbx = new System.Windows.Forms.TextBox();
             this.studentIDTxtbx = new System.Windows.Forms.TextBox();
+            this.instructorName = new System.Windows.Forms.ComboBox();
+            this.equipmentName = new System.Windows.Forms.ComboBox();
+            this.availableLabel = new System.Windows.Forms.Label();
             this.clearpanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,9 +76,10 @@
             // clearpanel
             // 
             this.clearpanel.BackColor = System.Drawing.Color.Transparent;
+            this.clearpanel.Controls.Add(this.availableLabel);
+            this.clearpanel.Controls.Add(this.equipmentName);
+            this.clearpanel.Controls.Add(this.instructorName);
             this.clearpanel.Controls.Add(this.quantityTxtbx);
-            this.clearpanel.Controls.Add(this.equipmentNameTxtbx);
-            this.clearpanel.Controls.Add(this.instructorNameTxtbx);
             this.clearpanel.Controls.Add(this.subjectCodeTxtbx);
             this.clearpanel.Controls.Add(this.yearTxtbx);
             this.clearpanel.Controls.Add(this.courseTxtbx);
@@ -97,26 +99,6 @@
             this.quantityTxtbx.Name = "quantityTxtbx";
             this.quantityTxtbx.Size = new System.Drawing.Size(290, 36);
             this.quantityTxtbx.TabIndex = 17;
-            // 
-            // equipmentNameTxtbx
-            // 
-            this.equipmentNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.equipmentNameTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.equipmentNameTxtbx.Location = new System.Drawing.Point(473, 284);
-            this.equipmentNameTxtbx.Multiline = true;
-            this.equipmentNameTxtbx.Name = "equipmentNameTxtbx";
-            this.equipmentNameTxtbx.Size = new System.Drawing.Size(290, 36);
-            this.equipmentNameTxtbx.TabIndex = 16;
-            // 
-            // instructorNameTxtbx
-            // 
-            this.instructorNameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.instructorNameTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.instructorNameTxtbx.Location = new System.Drawing.Point(473, 187);
-            this.instructorNameTxtbx.Multiline = true;
-            this.instructorNameTxtbx.Name = "instructorNameTxtbx";
-            this.instructorNameTxtbx.Size = new System.Drawing.Size(290, 36);
-            this.instructorNameTxtbx.TabIndex = 15;
             // 
             // subjectCodeTxtbx
             // 
@@ -170,6 +152,50 @@
             this.studentIDTxtbx.TabIndex = 10;
             this.studentIDTxtbx.TextChanged += new System.EventHandler(this.studentIDTxtbx_TextChanged);
             // 
+            // instructorName
+            // 
+            this.instructorName.BackColor = System.Drawing.Color.White;
+            this.instructorName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.instructorName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.instructorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.instructorName.FormattingEnabled = true;
+            this.instructorName.ItemHeight = 24;
+            this.instructorName.Items.AddRange(new object[] {
+            "Engr. Roel B. Lauron",
+            "Engr. Johnalyn Figueras",
+            "Engr. Jundith D. Alterado",
+            "Engr. Stephanie Grace F. Villarubia",
+            "Engr. Julian N. Semblante",
+            "Engr. Mervin Tampus",
+            "Engr. Nikko D Alferez",
+            "Engr. Nash Uriel A. Tapayan"});
+            this.instructorName.Location = new System.Drawing.Point(467, 187);
+            this.instructorName.Name = "instructorName";
+            this.instructorName.Size = new System.Drawing.Size(300, 32);
+            this.instructorName.TabIndex = 3;
+            // 
+            // equipmentName
+            // 
+            this.equipmentName.BackColor = System.Drawing.Color.White;
+            this.equipmentName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.equipmentName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipmentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.equipmentName.FormattingEnabled = true;
+            this.equipmentName.ItemHeight = 24;
+            this.equipmentName.Location = new System.Drawing.Point(467, 285);
+            this.equipmentName.Name = "equipmentName";
+            this.equipmentName.Size = new System.Drawing.Size(300, 32);
+            this.equipmentName.TabIndex = 18;
+            // 
+            // availableLabel
+            // 
+            this.availableLabel.AutoSize = true;
+            this.availableLabel.Location = new System.Drawing.Point(421, 381);
+            this.availableLabel.Name = "availableLabel";
+            this.availableLabel.Size = new System.Drawing.Size(35, 13);
+            this.availableLabel.TabIndex = 19;
+            this.availableLabel.Text = "label1";
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,6 +208,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Order";
             this.Text = "Order";
+            this.Load += new System.EventHandler(this.Order_Load);
             this.clearpanel.ResumeLayout(false);
             this.clearpanel.PerformLayout();
             this.ResumeLayout(false);
@@ -194,12 +221,13 @@
         private System.Windows.Forms.Button submitOrderBTN;
         private System.Windows.Forms.Panel clearpanel;
         private System.Windows.Forms.TextBox quantityTxtbx;
-        private System.Windows.Forms.TextBox equipmentNameTxtbx;
-        private System.Windows.Forms.TextBox instructorNameTxtbx;
         private System.Windows.Forms.TextBox subjectCodeTxtbx;
         private System.Windows.Forms.TextBox yearTxtbx;
         private System.Windows.Forms.TextBox courseTxtbx;
         private System.Windows.Forms.TextBox studentNameTxtbx;
         private System.Windows.Forms.TextBox studentIDTxtbx;
+        private System.Windows.Forms.ComboBox instructorName;
+        private System.Windows.Forms.ComboBox equipmentName;
+        private System.Windows.Forms.Label availableLabel;
     }
 }

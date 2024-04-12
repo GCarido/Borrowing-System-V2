@@ -146,6 +146,9 @@ namespace BorrowingSystemV2
 
         }
 
-       
+        private void loginpanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
