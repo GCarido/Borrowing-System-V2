@@ -31,15 +31,16 @@
             this.clearOrderBTN = new System.Windows.Forms.Button();
             this.submitOrderBTN = new System.Windows.Forms.Button();
             this.clearpanel = new System.Windows.Forms.Panel();
+            this.availableLabel = new System.Windows.Forms.Label();
+            this.equipmentName = new System.Windows.Forms.ComboBox();
+            this.instructorName = new System.Windows.Forms.ComboBox();
             this.quantityTxtbx = new System.Windows.Forms.TextBox();
             this.subjectCodeTxtbx = new System.Windows.Forms.TextBox();
             this.yearTxtbx = new System.Windows.Forms.TextBox();
             this.courseTxtbx = new System.Windows.Forms.TextBox();
             this.studentNameTxtbx = new System.Windows.Forms.TextBox();
             this.studentIDTxtbx = new System.Windows.Forms.TextBox();
-            this.instructorName = new System.Windows.Forms.ComboBox();
-            this.equipmentName = new System.Windows.Forms.ComboBox();
-            this.availableLabel = new System.Windows.Forms.Label();
+            this.quantityLabel = new System.Windows.Forms.Label();
             this.clearpanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +77,7 @@
             // clearpanel
             // 
             this.clearpanel.BackColor = System.Drawing.Color.Transparent;
+            this.clearpanel.Controls.Add(this.quantityLabel);
             this.clearpanel.Controls.Add(this.availableLabel);
             this.clearpanel.Controls.Add(this.equipmentName);
             this.clearpanel.Controls.Add(this.instructorName);
@@ -89,6 +91,53 @@
             this.clearpanel.Name = "clearpanel";
             this.clearpanel.Size = new System.Drawing.Size(813, 582);
             this.clearpanel.TabIndex = 1;
+            // 
+            // availableLabel
+            // 
+            this.availableLabel.AutoSize = true;
+            this.availableLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.availableLabel.ForeColor = System.Drawing.Color.Blue;
+            this.availableLabel.Location = new System.Drawing.Point(715, 438);
+            this.availableLabel.Name = "availableLabel";
+            this.availableLabel.Size = new System.Drawing.Size(106, 17);
+            this.availableLabel.TabIndex = 19;
+            this.availableLabel.Text = "{availableLabel}";
+            // 
+            // equipmentName
+            // 
+            this.equipmentName.BackColor = System.Drawing.Color.White;
+            this.equipmentName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.equipmentName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.equipmentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.equipmentName.FormattingEnabled = true;
+            this.equipmentName.ItemHeight = 24;
+            this.equipmentName.Location = new System.Drawing.Point(467, 285);
+            this.equipmentName.Name = "equipmentName";
+            this.equipmentName.Size = new System.Drawing.Size(300, 32);
+            this.equipmentName.TabIndex = 18;
+            this.equipmentName.SelectedIndexChanged += new System.EventHandler(this.equipmentName_SelectedIndexChanged);
+            // 
+            // instructorName
+            // 
+            this.instructorName.BackColor = System.Drawing.Color.White;
+            this.instructorName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.instructorName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.instructorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.instructorName.FormattingEnabled = true;
+            this.instructorName.ItemHeight = 24;
+            this.instructorName.Items.AddRange(new object[] {
+            "Engr. Roel B. Lauron",
+            "Engr. Johnalyn Figueras",
+            "Engr. Jundith D. Alterado",
+            "Engr. Stephanie Grace F. Villarubia",
+            "Engr. Julian N. Semblante",
+            "Engr. Mervin Tampus",
+            "Engr. Nikko D Alferez",
+            "Engr. Nash Uriel A. Tapayan"});
+            this.instructorName.Location = new System.Drawing.Point(467, 187);
+            this.instructorName.Name = "instructorName";
+            this.instructorName.Size = new System.Drawing.Size(300, 32);
+            this.instructorName.TabIndex = 3;
             // 
             // quantityTxtbx
             // 
@@ -152,49 +201,15 @@
             this.studentIDTxtbx.TabIndex = 10;
             this.studentIDTxtbx.TextChanged += new System.EventHandler(this.studentIDTxtbx_TextChanged);
             // 
-            // instructorName
+            // quantityLabel
             // 
-            this.instructorName.BackColor = System.Drawing.Color.White;
-            this.instructorName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.instructorName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.instructorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.instructorName.FormattingEnabled = true;
-            this.instructorName.ItemHeight = 24;
-            this.instructorName.Items.AddRange(new object[] {
-            "Engr. Roel B. Lauron",
-            "Engr. Johnalyn Figueras",
-            "Engr. Jundith D. Alterado",
-            "Engr. Stephanie Grace F. Villarubia",
-            "Engr. Julian N. Semblante",
-            "Engr. Mervin Tampus",
-            "Engr. Nikko D Alferez",
-            "Engr. Nash Uriel A. Tapayan"});
-            this.instructorName.Location = new System.Drawing.Point(467, 187);
-            this.instructorName.Name = "instructorName";
-            this.instructorName.Size = new System.Drawing.Size(300, 32);
-            this.instructorName.TabIndex = 3;
-            // 
-            // equipmentName
-            // 
-            this.equipmentName.BackColor = System.Drawing.Color.White;
-            this.equipmentName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.equipmentName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.equipmentName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.equipmentName.FormattingEnabled = true;
-            this.equipmentName.ItemHeight = 24;
-            this.equipmentName.Location = new System.Drawing.Point(467, 285);
-            this.equipmentName.Name = "equipmentName";
-            this.equipmentName.Size = new System.Drawing.Size(300, 32);
-            this.equipmentName.TabIndex = 18;
-            // 
-            // availableLabel
-            // 
-            this.availableLabel.AutoSize = true;
-            this.availableLabel.Location = new System.Drawing.Point(421, 381);
-            this.availableLabel.Name = "availableLabel";
-            this.availableLabel.Size = new System.Drawing.Size(35, 13);
-            this.availableLabel.TabIndex = 19;
-            this.availableLabel.Text = "label1";
+            this.quantityLabel.AutoSize = true;
+            this.quantityLabel.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.quantityLabel.Location = new System.Drawing.Point(464, 438);
+            this.quantityLabel.Name = "quantityLabel";
+            this.quantityLabel.Size = new System.Drawing.Size(254, 17);
+            this.quantityLabel.TabIndex = 20;
+            this.quantityLabel.Text = "The available quantity of the equipment is:";
             // 
             // Order
             // 
@@ -229,5 +244,6 @@
         private System.Windows.Forms.ComboBox instructorName;
         private System.Windows.Forms.ComboBox equipmentName;
         private System.Windows.Forms.Label availableLabel;
+        private System.Windows.Forms.Label quantityLabel;
     }
 }
