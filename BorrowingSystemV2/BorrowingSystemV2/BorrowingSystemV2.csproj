@@ -175,6 +175,12 @@
     <Compile Include="AdminLogin.Designer.cs">
       <DependentUpon>AdminLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminLogs.Designer.cs">
+      <DependentUpon>AdminLogs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +218,12 @@
     </Compile>
     <Compile Include="StaffLogin.Designer.cs">
       <DependentUpon>StaffLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffLogs.Designer.cs">
+      <DependentUpon>StaffLogs.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddNotes.resx">
       <DependentUpon>AddNotes.cs</DependentUpon>
@@ -264,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StaffLogin.resx">
       <DependentUpon>StaffLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffLogs.resx">
+      <DependentUpon>StaffLogs.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BorrowingSystemV2_TemporaryKey.pfx" />
     <None Include="packages.config" />
@@ -417,6 +432,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Staff Logs.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

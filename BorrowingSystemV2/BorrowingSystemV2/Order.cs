@@ -55,7 +55,6 @@ namespace BorrowingSystemV2
                 while(reader.Read())
                 {
                     string eqName = reader.GetString("equipmentName");
-                   int eqQuan = reader.GetInt16("quantity");
                     string display = $"{eqName}";
                     equipmentName.Items.Add(display);
                 }

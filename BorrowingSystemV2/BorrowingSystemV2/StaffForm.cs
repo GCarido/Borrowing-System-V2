@@ -126,6 +126,7 @@ namespace BorrowingSystemV2
 
         private void logsBTN_Click(object sender, EventArgs e)
         {
+            loadform(new StaffLogs()); 
             staffFormPanel.Visible = true;
             homeBTN.BackColor = Color.FromArgb(233, 215, 174);
             homeBTN.ForeColor = Color.FromArgb(84, 84, 84);
