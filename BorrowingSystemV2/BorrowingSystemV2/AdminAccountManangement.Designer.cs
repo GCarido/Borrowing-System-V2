@@ -140,6 +140,7 @@
             this.searchData.Name = "searchData";
             this.searchData.Size = new System.Drawing.Size(303, 46);
             this.searchData.TabIndex = 20;
+            this.searchData.TextChanged += new System.EventHandler(this.searchData_TextChanged);
             // 
             // searchBTN
             // 

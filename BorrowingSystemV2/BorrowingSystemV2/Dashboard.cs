@@ -165,7 +165,7 @@ namespace BorrowingSystemV2
                         "INNER JOIN inventory ON orders.equipment_ID = inventory.equipmentID " +
                         "INNER JOIN students ON orders.student_ID = students.studentID " +
                         "LEFT JOIN employee_admin ON orders.admin_ID = employee_admin.adminID " +
-                        "LEFT JOIN employee_staff on orders.staff_ID = employee_staff.staffID " +
+                        "LEFT JOIN employee_staff ON orders.staff_ID = employee_staff.staffID " +
                         "WHERE orders.status_ IS NULL", connection);
                     MySqlDataAdapter adp = new MySqlDataAdapter(cmd1);
                     DataTable dt = new DataTable();
