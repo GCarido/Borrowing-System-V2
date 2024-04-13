@@ -26,7 +26,6 @@ namespace BorrowingSystemV2
         public Dashboard()
         {
             InitializeComponent();
-            this.dashboardTable.MouseWheel += new MouseEventHandler(dashboardTable_MouseWheel);
         }
 
         private void dashboardTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -40,7 +39,7 @@ namespace BorrowingSystemV2
             connection.Open();
 
             MySqlCommand cmd = new MySqlCommand("SELECT orders.orderID, orders.subject_code, " +
-                "orders.instructor_name, inventory.equipmentName, students.studentName, " +
+                "orders.instructor_name, inventory.equipmentName, students.studentName, orders.quantity, " +
                // "CONCAT(employee_admin.firstname, ' ', employee_admin.lastname) AS adminFullname, " +
                 "CONCAT(employee_staff.firstname, ' ', employee_staff.lastname) AS staffFullname, " +
                 "orders.order_DATE, orders.order_TIME, orders.status_ FROM orders " +
@@ -54,41 +53,6 @@ namespace BorrowingSystemV2
             adp.Fill(dt);
             dashboardTable.DataSource = dt;
             connection.Close();
-        }
-
-        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-            int visibleRows = dashboardTable.DisplayedRowCount(false);
-            int maxFirstRow = Math.Max(0, dashboardTable.Rows.Count - visibleRows);
-            int desiredFirstRow = Math.Max(0, Math.Min(maxFirstRow, e.NewValue));
-
-            dashboardTable.FirstDisplayedScrollingRowIndex = desiredFirstRow;
-        }
-
-        private void dashboardTable_MouseWheel(object sender, MouseEventArgs e)
-        {
-
-            try
-            {
-                int currentIndex = this.dashboardTable.FirstDisplayedScrollingRowIndex;
-                int scrollLines = SystemInformation.MouseWheelScrollLines;
-
-                if (e.Delta > 0)
-                {
-                    this.dashboardTable.FirstDisplayedScrollingRowIndex
-                        = Math.Max(0, currentIndex - scrollLines);
-                }
-                else if (e.Delta < 0)
-                {
-                    this.dashboardTable.FirstDisplayedScrollingRowIndex
-                        = currentIndex + scrollLines;
-                }
-            }
-            catch (Exception)
-            {
-                return;
-            }
-
         }
 
         private void dashboardTable_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -112,7 +76,7 @@ namespace BorrowingSystemV2
             if (e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == 8)
+            if (e.ColumnIndex == 9)
             {
 
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
@@ -138,7 +102,7 @@ namespace BorrowingSystemV2
             if (e.RowIndex < 0)
                 return;
 
-            if (e.ColumnIndex == 8)
+            if (e.ColumnIndex == 9)
             {
 
                 //Change Image when selected
@@ -152,28 +116,40 @@ namespace BorrowingSystemV2
                     AddNotes addnote = new AddNotes();
                     addnote.ShowDialog();
 
-                    //if (AddNotes.Notes == null || AddNotes.Quantity == null)
-                    //{
-                    //    return;
-                    //}
-
                     //CODE FOR INSERT
                     DateTime return_DATE = DateTime.Now;
                     DateTime return_TIME = DateTime.Now;
+
+                    //Check if quantity for AddNotes.Notes is less than to the quantity of item borrowed
+                    MySqlConnection connection1 = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
+                    connection1.Open();
+                    MySqlCommand cmd4 = new MySqlCommand($"SELECT quantity FROM orders WHERE orderID = {dashboardTable.Rows[e.RowIndex].Cells["orderID"].Value.ToString()}", connection1);
+                    MySqlDataReader reader = cmd4.ExecuteReader();
+                    reader.Read();
+                    int quantity = reader.GetInt32("quantity");
+                    if (Convert.ToInt32(AddNotes.Quantity) > quantity)
+                    {
+                        MessageBox.Show("Quantity to be returned is greater than the quantity borrowed!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        selectedCell = null;
+                        dashboardTable.Refresh();
+                        return;
+                    }
+                    connection1.Close();
+
                     MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
                     connection.Open();
-                    MySqlCommand cmd = new MySqlCommand($"INSERT INTO sql6696982.logs_ (order_ID, notes, return_DATE, return_TIME) VALUES ({dashboardTable.Rows[e.RowIndex].Cells[0].Value.ToString()}, '{AddNotes.Notes}', @returnDate, @returnTime)", connection);
+                    MySqlCommand cmd = new MySqlCommand($"INSERT INTO sql6696982.logs_ (order_ID, notes, return_DATE, return_TIME) VALUES ({dashboardTable.Rows[e.RowIndex].Cells["orderID"].Value.ToString()}, '{AddNotes.Notes}', @returnDate, @returnTime)", connection);
                     cmd.Parameters.AddWithValue("@returnDate", return_DATE);
                     cmd.Parameters.AddWithValue("@returnTime", return_TIME);
                     cmd.ExecuteNonQuery();
 
                     //Code to Update the status of the order into "Returned"
-                    string orderID = dashboardTable.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    string orderID = dashboardTable.Rows[e.RowIndex].Cells["orderID"].Value.ToString();
                     MySqlCommand cmd2 = new MySqlCommand($"UPDATE sql6696982.orders SET status_ = 'Returned' WHERE orderID = {orderID}", connection);
                     cmd2.ExecuteNonQuery();
 
                     //Code to Update the inventory based on the equipmentID borrowed
-                    string equipmentName = dashboardTable.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    string equipmentName = dashboardTable.Rows[e.RowIndex].Cells["equipmentName"].Value.ToString();
                     MySqlCommand cmd3 = new MySqlCommand($"UPDATE sql6696982.inventory SET quantity = quantity + {AddNotes.Quantity} WHERE equipmentName = '{equipmentName}'", connection);
                     cmd3.ExecuteNonQuery();
 
@@ -182,8 +158,8 @@ namespace BorrowingSystemV2
                     //REFRESH DATAGRIDVIEW
                     connection.Open();
                     MySqlCommand cmd1 = new MySqlCommand("SELECT orders.orderID, orders.subject_code, " +
-                        "orders.instructor_name, inventory.equipmentName, students.studentName, " +
-                        //"CONCAT(employee_admin.firstname, ' ', employee_admin.lastname) AS adminFullname, " +
+                        "orders.instructor_name, inventory.equipmentName, students.studentName, orders.quantity, " +
+                        // "CONCAT(employee_admin.firstname, ' ', employee_admin.lastname) AS adminFullname, " +
                         "CONCAT(employee_staff.firstname, ' ', employee_staff.lastname) AS staffFullname, " +
                         "orders.order_DATE, orders.order_TIME, orders.status_ FROM orders " +
                         "INNER JOIN inventory ON orders.equipment_ID = inventory.equipmentID " +

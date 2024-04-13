@@ -34,9 +34,9 @@
             this.adminIDTxtbx = new System.Windows.Forms.TextBox();
             this.AfirstnameTxtbx = new System.Windows.Forms.TextBox();
             this.AusernameTxtbx = new System.Windows.Forms.TextBox();
-            this.ApositionTxtbx = new System.Windows.Forms.TextBox();
             this.AlastnameTxtbx = new System.Windows.Forms.TextBox();
             this.ApasswordTxtbx = new System.Windows.Forms.TextBox();
+            this.ApositionTxtbx = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // deleteBTN
@@ -114,17 +114,6 @@
             this.AusernameTxtbx.Size = new System.Drawing.Size(202, 36);
             this.AusernameTxtbx.TabIndex = 14;
             // 
-            // ApositionTxtbx
-            // 
-            this.ApositionTxtbx.BackColor = System.Drawing.Color.White;
-            this.ApositionTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ApositionTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ApositionTxtbx.Location = new System.Drawing.Point(281, 56);
-            this.ApositionTxtbx.Multiline = true;
-            this.ApositionTxtbx.Name = "ApositionTxtbx";
-            this.ApositionTxtbx.Size = new System.Drawing.Size(202, 36);
-            this.ApositionTxtbx.TabIndex = 15;
-            // 
             // AlastnameTxtbx
             // 
             this.AlastnameTxtbx.BackColor = System.Drawing.Color.White;
@@ -147,6 +136,22 @@
             this.ApasswordTxtbx.Size = new System.Drawing.Size(202, 36);
             this.ApasswordTxtbx.TabIndex = 17;
             // 
+            // ApositionTxtbx
+            // 
+            this.ApositionTxtbx.BackColor = System.Drawing.Color.White;
+            this.ApositionTxtbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ApositionTxtbx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ApositionTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.ApositionTxtbx.FormattingEnabled = true;
+            this.ApositionTxtbx.ItemHeight = 24;
+            this.ApositionTxtbx.Items.AddRange(new object[] {
+            "Staff",
+            "Admin"});
+            this.ApositionTxtbx.Location = new System.Drawing.Point(281, 58);
+            this.ApositionTxtbx.Name = "ApositionTxtbx";
+            this.ApositionTxtbx.Size = new System.Drawing.Size(202, 32);
+            this.ApositionTxtbx.TabIndex = 18;
+            // 
             // AdminList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,9 +159,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(199)))), ((int)(((byte)(230)))));
             this.BackgroundImage = global::BorrowingSystemV2.Properties.Resources.admininfo_icon;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Controls.Add(this.ApositionTxtbx);
             this.Controls.Add(this.ApasswordTxtbx);
             this.Controls.Add(this.AlastnameTxtbx);
-            this.Controls.Add(this.ApositionTxtbx);
             this.Controls.Add(this.AusernameTxtbx);
             this.Controls.Add(this.AfirstnameTxtbx);
             this.Controls.Add(this.adminIDTxtbx);
@@ -180,8 +185,8 @@
         private System.Windows.Forms.TextBox adminIDTxtbx;
         private System.Windows.Forms.TextBox AfirstnameTxtbx;
         private System.Windows.Forms.TextBox AusernameTxtbx;
-        private System.Windows.Forms.TextBox ApositionTxtbx;
         private System.Windows.Forms.TextBox AlastnameTxtbx;
         private System.Windows.Forms.TextBox ApasswordTxtbx;
+        private System.Windows.Forms.ComboBox ApositionTxtbx;
     }
 }

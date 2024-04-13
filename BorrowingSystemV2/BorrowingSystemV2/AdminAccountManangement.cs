@@ -16,8 +16,8 @@ namespace BorrowingSystemV2
 {
     public partial class AdminAccountManangement : Form
     {
-       
-      
+
+        public static AdminAccountManangement instance;
         public static string studentID { get; set; }
         public static string studentName { get; set; }
         public static string studentCourse { get; set; }
@@ -43,6 +43,7 @@ namespace BorrowingSystemV2
         {
             InitializeComponent();
             studentList1.BringToFront();
+            instance = this;
         }
 
         public string mySqlServerName = "sql6.freemysqlhosting.net";
@@ -76,6 +77,31 @@ namespace BorrowingSystemV2
 
             connection.Close();
 
+        }
+
+        public void refreshData()
+        {
+            MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
+            connection.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM sql6696982.students", connection);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+            studentData.DataSource = dt;
+
+            cmd = new MySqlCommand("SELECT * FROM sql6696982.employee_staff", connection);
+            adp = new MySqlDataAdapter(cmd);
+            dt = new DataTable();
+            adp.Fill(dt);
+            staffData.DataSource = dt;
+
+            cmd = new MySqlCommand("SELECT * FROM sql6696982.employee_admin", connection);
+            adp = new MySqlDataAdapter(cmd);
+            dt = new DataTable();
+            adp.Fill(dt);
+            adminData.DataSource = dt;
+
+            connection.Close();
         }
 
         public void searchDatas(string Search)

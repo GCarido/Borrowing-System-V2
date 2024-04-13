@@ -44,8 +44,8 @@ namespace BorrowingSystemV2
         {
             try
             {
-
-           
+                availableLabel.Text = "";
+                quantityLabel.Text = "";
                 MySqlConnection connection = new MySqlConnection($"datasource={mySqlServerName};port=3306;username={mySqlServerUserId};password={mySqlServerPassword};database={mySqlDatabaseName}");
                 connection.Open();
                 MySqlCommand cmd = new MySqlCommand("SELECT equipmentName, quantity FROM sql6696982.inventory WHERE quantity>0", connection);
@@ -148,16 +148,16 @@ namespace BorrowingSystemV2
                     DateTime order_TIME = DateTime.Now;
                     MySqlCommand command = connection.CreateCommand();
                     command.CommandType = CommandType.Text;
-                    command.CommandText = "INSERT INTO sql6696982.orders (subject_code, instructor_name, student_ID, staff_ID, admin_ID, order_DATE, order_TIME, equipment_id) VALUES (@subject_code, @instructor_name, @student_ID, @staff_ID, @admin_id, @order_DATE, @order_TIME, @equipment_id)";
+                    command.CommandText = "INSERT INTO sql6696982.orders (subject_code, instructor_name, quantity, student_ID, staff_ID, admin_ID, order_DATE, order_TIME, equipment_id) VALUES (@subject_code, @instructor_name, @quantity, @student_ID, @staff_ID, @admin_id, @order_DATE, @order_TIME, @equipment_id)";
                     command.Parameters.AddWithValue("@subject_code", subjectCodeTxtbx.Text);
                     command.Parameters.AddWithValue("@instructor_name", instructorName.Text);
                     command.Parameters.AddWithValue("@student_ID", studentIDTxtbx.Text);
+                    command.Parameters.AddWithValue("@quantity", quantityTxtbx.Text);
                     command.Parameters.AddWithValue("@staff_ID", StaffLogin.EmployeeID);
                     command.Parameters.AddWithValue("@admin_ID", AdminLogin.EmployeeID);
                     command.Parameters.AddWithValue("@order_DATE", order_DATE.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@order_TIME", order_TIME.ToString("hh:mm:ss:tt"));
                     command.Parameters.AddWithValue("@equipment_id", equipmentId);
-                   // command.Parameters.AddWithValue("@quantity", quantityTxtbx.Text);
                     command.ExecuteNonQuery();
 
                     connection.Close();
@@ -166,8 +166,12 @@ namespace BorrowingSystemV2
                     instructorName.Text = "";
                     equipmentName.Text = "";
                     quantityTxtbx.Text = "";
+                    instructorName.SelectedIndex = -1;
+                    equipmentName.SelectedIndex = -1;
+
                     MessageBox.Show("Submitted Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                   
+                    quantityLabel.Text = "";
+                    availableLabel.Text = "";
                 }
             }
 
@@ -231,16 +235,22 @@ namespace BorrowingSystemV2
         {
             try
             {
-
                 if (MessageBox.Show("Are you sure you want to clear all fields?", "Clear Fields", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    instructorName.Text = "";
+                    equipmentName.Text = "";
+                    quantityLabel.Text = "";
+                    availableLabel.Text = "";
                     foreach (Control c in clearpanel.Controls)
                     {
                         if (c is TextBox)
                         {
                             ((TextBox)c).Clear();
                         }
-
+                        else if (c is ComboBox)
+                        {
+                            ((ComboBox)c).SelectedIndex = -1; // Clear the selected item in the ComboBox
+                        }
                     }
                 }
             }
@@ -250,6 +260,20 @@ namespace BorrowingSystemV2
             }
         }
 
-       
+        private void equipmentName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Selecting the equipment name will display the quantity of the equipment through the availableLabel label
+            MySqlConnection connection = new MySqlConnection($"datasource={mySqlServerName};port=3306;username = {mySqlServerUserId};password={mySqlServerPassword};database={mySqlDatabaseName}");
+            connection.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT quantity FROM sql6696982.inventory WHERE equipmentName = @equipmentName", connection);
+            cmd.Parameters.AddWithValue("@equipmentName", equipmentName.Text);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if(reader.Read())
+            {
+                quantityLabel.Text = "The available quantity of the equipment is:";
+                availableLabel.Text = $"{reader.GetInt16("quantity")}";
+
+            }
+        }
     }
 }
