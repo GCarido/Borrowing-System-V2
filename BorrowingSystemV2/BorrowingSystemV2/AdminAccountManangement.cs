@@ -253,6 +253,34 @@ namespace BorrowingSystemV2
 
         }
 
-        
+        private void searchData_TextChanged(object sender, EventArgs e)
+        {
+            if(searchData.Text == "")
+            {
+                MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM sql6696982.students", connection);
+                MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adp.Fill(dt);
+                studentData.DataSource = dt;
+
+                cmd = new MySqlCommand("SELECT * FROM sql6696982.employee_staff", connection);
+                adp = new MySqlDataAdapter(cmd);
+                dt = new DataTable();
+                adp.Fill(dt);
+                staffData.DataSource = dt;
+
+                cmd = new MySqlCommand("SELECT * FROM sql6696982.employee_admin", connection);
+                adp = new MySqlDataAdapter(cmd);
+                dt = new DataTable();
+                adp.Fill(dt);
+                adminData.DataSource = dt;
+
+                searchDatas("");
+
+                connection.Close();
+            }
+        }
     }
 }
