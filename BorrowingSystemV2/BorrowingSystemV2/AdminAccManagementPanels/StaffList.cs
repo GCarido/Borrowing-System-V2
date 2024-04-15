@@ -43,18 +43,6 @@ namespace BorrowingSystemV2.AdminAccManagementPanels
             DataTable table = new DataTable();
             adapter.Fill(table);
 
-            if (staffIDTxtbx.Text == "" || firstnameTxtbx.Text == "" || lastnameTxtbx.Text == "" || usernameTxtbx.Text == "" || passwordTxtbx.Text == "" || positionTxtbx.Text == "")
-            {
-                MessageBox.Show("Please provide all necessary information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (table.Rows.Count == 0)
-            {
-                MessageBox.Show("Staff ID does not exist", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             if (MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 try

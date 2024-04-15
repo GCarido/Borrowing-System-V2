@@ -28,14 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.adminInventoryData = new System.Windows.Forms.DataGridView();
-            this.equipmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipmentDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.condition_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchBTN = new System.Windows.Forms.Button();
             this.searchData = new System.Windows.Forms.TextBox();
             this.quantityTxtbx = new System.Windows.Forms.TextBox();
@@ -50,89 +45,53 @@
             this.doneBTN = new System.Windows.Forms.Button();
             this.editBTN = new System.Windows.Forms.Button();
             this.equipmentImage = new System.Windows.Forms.PictureBox();
-            this.imageData = new System.Windows.Forms.DataGridView();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.equipmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipmentDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.condition_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.image = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.adminInventoryData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipmentImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageData)).BeginInit();
             this.SuspendLayout();
             // 
             // adminInventoryData
             // 
             this.adminInventoryData.AllowUserToAddRows = false;
             this.adminInventoryData.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Gadugi", 12F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.adminInventoryData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Gadugi", 12F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.adminInventoryData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.adminInventoryData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.adminInventoryData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.equipmentID,
             this.equipmentName,
             this.equipmentDescription,
             this.quantity,
-            this.condition_});
+            this.condition_,
+            this.image});
             this.adminInventoryData.Location = new System.Drawing.Point(545, 114);
             this.adminInventoryData.Name = "adminInventoryData";
             this.adminInventoryData.ReadOnly = true;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.adminInventoryData.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.adminInventoryData.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.adminInventoryData.RowHeadersVisible = false;
             this.adminInventoryData.Size = new System.Drawing.Size(881, 457);
             this.adminInventoryData.TabIndex = 15;
             this.adminInventoryData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adminInventoryData_CellClick);
-            // 
-            // equipmentID
-            // 
-            this.equipmentID.DataPropertyName = "equipmentID";
-            this.equipmentID.HeaderText = "Equipment ID";
-            this.equipmentID.Name = "equipmentID";
-            this.equipmentID.ReadOnly = true;
-            this.equipmentID.Width = 139;
-            // 
-            // equipmentName
-            // 
-            this.equipmentName.DataPropertyName = "equipmentName";
-            this.equipmentName.HeaderText = "Equipment Name";
-            this.equipmentName.Name = "equipmentName";
-            this.equipmentName.ReadOnly = true;
-            this.equipmentName.Width = 200;
-            // 
-            // equipmentDescription
-            // 
-            this.equipmentDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.equipmentDescription.DataPropertyName = "equipmentDescription";
-            this.equipmentDescription.HeaderText = "Equipment Description";
-            this.equipmentDescription.Name = "equipmentDescription";
-            this.equipmentDescription.ReadOnly = true;
-            // 
-            // quantity
-            // 
-            this.quantity.DataPropertyName = "quantity";
-            this.quantity.HeaderText = "Quantity";
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            this.quantity.Width = 80;
-            // 
-            // condition_
-            // 
-            this.condition_.DataPropertyName = "condition_";
-            this.condition_.HeaderText = "Condition";
-            this.condition_.Name = "condition_";
-            this.condition_.ReadOnly = true;
-            this.condition_.Width = 90;
             // 
             // searchBTN
             // 
@@ -263,6 +222,7 @@
             this.updateBTN.Text = "Update";
             this.updateBTN.UseVisualStyleBackColor = false;
             this.updateBTN.Visible = false;
+            this.updateBTN.Click += new System.EventHandler(this.updateBTN_Click);
             // 
             // deleteBTN
             // 
@@ -278,6 +238,7 @@
             this.deleteBTN.Text = "Delete";
             this.deleteBTN.UseVisualStyleBackColor = false;
             this.deleteBTN.Visible = false;
+            this.deleteBTN.Click += new System.EventHandler(this.deleteBTN_Click);
             // 
             // doneBTN
             // 
@@ -314,35 +275,66 @@
             // 
             this.equipmentImage.BackColor = System.Drawing.Color.Transparent;
             this.equipmentImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.equipmentImage.Location = new System.Drawing.Point(54, 37);
+            this.equipmentImage.Location = new System.Drawing.Point(54, 34);
             this.equipmentImage.Name = "equipmentImage";
-            this.equipmentImage.Size = new System.Drawing.Size(356, 142);
+            this.equipmentImage.Size = new System.Drawing.Size(364, 153);
+            this.equipmentImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.equipmentImage.TabIndex = 22;
             this.equipmentImage.TabStop = false;
             // 
-            // imageData
+            // openFileDialog1
             // 
-            this.imageData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.imageData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column2,
-            this.Column1});
-            this.imageData.Location = new System.Drawing.Point(629, 225);
-            this.imageData.Name = "imageData";
-            this.imageData.Size = new System.Drawing.Size(287, 211);
-            this.imageData.TabIndex = 23;
-            this.imageData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.imageData_CellClick);
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // Column2
+            // equipmentID
             // 
-            this.Column2.DataPropertyName = "idsample_image";
-            this.Column2.HeaderText = "Id";
-            this.Column2.Name = "Column2";
+            this.equipmentID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.equipmentID.DataPropertyName = "equipmentID";
+            this.equipmentID.HeaderText = "Equipment ID";
+            this.equipmentID.Name = "equipmentID";
+            this.equipmentID.ReadOnly = true;
             // 
-            // Column1
+            // equipmentName
             // 
-            this.Column1.DataPropertyName = "images";
-            this.Column1.HeaderText = "Image";
-            this.Column1.Name = "Column1";
+            this.equipmentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.equipmentName.DataPropertyName = "equipmentName";
+            this.equipmentName.HeaderText = "Equipment Name";
+            this.equipmentName.Name = "equipmentName";
+            this.equipmentName.ReadOnly = true;
+            // 
+            // equipmentDescription
+            // 
+            this.equipmentDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.equipmentDescription.DataPropertyName = "equipmentDescription";
+            this.equipmentDescription.HeaderText = "Equipment Description";
+            this.equipmentDescription.Name = "equipmentDescription";
+            this.equipmentDescription.ReadOnly = true;
+            // 
+            // quantity
+            // 
+            this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.quantity.DataPropertyName = "quantity";
+            this.quantity.HeaderText = "Quantity";
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            // 
+            // condition_
+            // 
+            this.condition_.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.condition_.DataPropertyName = "condition_";
+            this.condition_.HeaderText = "Condition";
+            this.condition_.Name = "condition_";
+            this.condition_.ReadOnly = true;
+            // 
+            // image
+            // 
+            this.image.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.image.DataPropertyName = "image";
+            this.image.HeaderText = "Image";
+            this.image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.image.Name = "image";
+            this.image.ReadOnly = true;
             // 
             // AdminInventory
             // 
@@ -350,7 +342,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BorrowingSystemV2.Properties.Resources.Admin_invenotry__1_;
             this.ClientSize = new System.Drawing.Size(1532, 650);
-            this.Controls.Add(this.imageData);
             this.Controls.Add(this.equipmentImage);
             this.Controls.Add(this.editBTN);
             this.Controls.Add(this.doneBTN);
@@ -372,7 +363,6 @@
             this.Load += new System.EventHandler(this.AdminInventory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.adminInventoryData)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipmentImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,11 +371,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView adminInventoryData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentDescription;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn condition_;
         private System.Windows.Forms.Button searchBTN;
         private System.Windows.Forms.TextBox searchData;
         private System.Windows.Forms.TextBox quantityTxtbx;
@@ -400,8 +385,12 @@
         private System.Windows.Forms.Button doneBTN;
         private System.Windows.Forms.Button editBTN;
         private System.Windows.Forms.PictureBox equipmentImage;
-        private System.Windows.Forms.DataGridView imageData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewImageColumn Column1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn condition_;
+        private System.Windows.Forms.DataGridViewImageColumn image;
     }
 }
