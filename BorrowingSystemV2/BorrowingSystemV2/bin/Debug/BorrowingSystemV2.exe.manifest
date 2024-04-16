@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BorrowingSystemV2.exe" size="1451968">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BorrowingSystemV2.exe" size="1456064">
       <assemblyIdentity name="BorrowingSystemV2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>J9jaxwfBeLbS/E8qy16lo3E4TwmmGaFPuP0PE/rMNJA=</dsig:DigestValue>
+        <dsig:DigestValue>Jx0nClsSIPgw4oBuOC0AXYJBsj7fBk41svfwIzxkfG8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
