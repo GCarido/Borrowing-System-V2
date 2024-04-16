@@ -87,20 +87,46 @@ namespace BorrowingSystemV2
         {
             MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
             connection.Open();
-            string searchQuery = "SELECT * FROM sql6696982.orders WHERE CONCAT(`subject_code`, `instructor_name`) like '%" + searchData.Text + "%'";
-            MySqlCommand cmd = new MySqlCommand(searchQuery, connection);
-            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            adp.Fill(dt);
-            if (dt.Rows.Count > 0)
+
+            string username = StaffLogin.Position == "Staff" ? StaffLogin.Username : AdminLogin.Username;
+            string position = StaffLogin.Position == "Staff" ? StaffLogin.Position : AdminLogin.Position;
+
+            MySqlCommand cmd;
+            if (position == "Admin")
             {
-                dashboardTable.DataSource = dt;
+                cmd = new MySqlCommand("SELECT orders.orderID, orders.subject_code, " +
+                    "orders.instructor_name, inventory.equipmentName, students.studentName, orders.quantity, " +
+                    "CONCAT(IFNULL(employee_staff.firstname, ''), ' ', IFNULL(employee_staff.lastname, ''), '', IFNULL(employee_admin.firstname, ''), ' ', IFNULL(employee_admin.lastname, '')) AS fullName, " +
+                    "orders.order_DATE, orders.order_TIME, orders.status_ FROM orders " +
+                    "INNER JOIN inventory ON orders.equipment_ID = inventory.equipmentID " +
+                    "INNER JOIN students ON orders.student_ID = students.studentID " +
+                    "LEFT JOIN employee_admin ON orders.admin_ID = employee_admin.adminID " +
+                    "LEFT JOIN employee_staff on orders.staff_ID = employee_staff.staffID " +
+                    "WHERE orders.status_ IS NULL AND (orders.subject_code LIKE @search OR orders.instructor_name LIKE @search OR inventory.equipmentName LIKE @search OR students.studentName LIKE @search)", connection);
             }
             else
             {
-                MessageBox.Show("Data not found.");
+                cmd = new MySqlCommand("SELECT orders.orderID, orders.subject_code, " +
+                    "orders.instructor_name, inventory.equipmentName, students.studentName, orders.quantity, " +
+                    "orders.order_DATE, orders.order_TIME, orders.status_ FROM orders " +
+                    "INNER JOIN inventory ON orders.equipment_ID = inventory.equipmentID " +
+                    "INNER JOIN students ON orders.student_ID = students.studentID " +
+                    "LEFT JOIN employee_admin ON orders.admin_ID = employee_admin.adminID " +
+                    "LEFT JOIN employee_staff on orders.staff_ID = employee_staff.staffID " +
+                    "WHERE orders.status_ IS NULL AND (employee_admin.username = @username OR employee_staff.username = @username) AND (orders.subject_code LIKE @search OR orders.instructor_name LIKE @search OR inventory.equipmentName LIKE @search OR students.studentName LIKE @search)", connection);
+                cmd.Parameters.AddWithValue("@username", username);
             }
+
+            cmd.Parameters.AddWithValue("@search", "%" + Search + "%");
+
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+            dashboardTable.DataSource = dt;
+
+            connection.Close();
         }
+
         private void dashboardTable_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 9)
@@ -255,8 +281,16 @@ namespace BorrowingSystemV2
 
         private void searchBTN_Click(object sender, EventArgs e)
         {
-            string Search = searchData.Text.ToString();
-            searchDatas(Search);
+            string searchText = searchData.Text.Trim();
+            searchDatas(searchText);
+        }
+
+        private void searchData_TextChanged(object sender, EventArgs e)
+        {
+            if(searchData.Text == "")
+            {
+                Dashboard_Load(sender, e);
+            }
         }
     }
 }
