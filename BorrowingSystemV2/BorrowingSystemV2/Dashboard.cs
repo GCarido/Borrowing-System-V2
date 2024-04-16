@@ -58,6 +58,7 @@ namespace BorrowingSystemV2
                     "LEFT JOIN employee_admin ON orders.admin_ID = employee_admin.adminID " +
                     "LEFT JOIN employee_staff on orders.staff_ID = employee_staff.staffID " +
                     "WHERE orders.status_ IS NULL", connection);
+               
             }
             else
             {
@@ -70,15 +71,36 @@ namespace BorrowingSystemV2
                     "LEFT JOIN employee_staff on orders.staff_ID = employee_staff.staffID " +
                     "WHERE orders.status_ IS NULL AND (employee_admin.username = @username OR employee_staff.username = @username)", connection);
                 cmd.Parameters.AddWithValue("@username", username);
+                
             }
 
             MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             adp.Fill(dt);
             dashboardTable.DataSource = dt;
+            
             connection.Close();
         }
 
+
+        public void searchDatas(string Search)
+        {
+            MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
+            connection.Open();
+            string searchQuery = "SELECT * FROM sql6696982.orders WHERE CONCAT(`subject_code`, `instructor_name`) like '%" + searchData.Text + "%'";
+            MySqlCommand cmd = new MySqlCommand(searchQuery, connection);
+            MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                dashboardTable.DataSource = dt;
+            }
+            else
+            {
+                MessageBox.Show("Data not found.");
+            }
+        }
         private void dashboardTable_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 9)
@@ -229,6 +251,12 @@ namespace BorrowingSystemV2
                     dashboardTable.Refresh();
                 }
             }
+        }
+
+        private void searchBTN_Click(object sender, EventArgs e)
+        {
+            string Search = searchData.Text.ToString();
+            searchDatas(Search);
         }
     }
 }
