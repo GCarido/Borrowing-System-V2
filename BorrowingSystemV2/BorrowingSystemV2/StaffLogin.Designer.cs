@@ -124,6 +124,7 @@
             this.staffpasstxtbox.Name = "staffpasstxtbox";
             this.staffpasstxtbox.Size = new System.Drawing.Size(238, 28);
             this.staffpasstxtbox.TabIndex = 1;
+            this.staffpasstxtbox.UseSystemPasswordChar = true;
             this.staffpasstxtbox.TextChanged += new System.EventHandler(this.staffpasstxtbox_TextChanged);
             this.staffpasstxtbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.staffpasstxtbox_KeyDown);
             // 

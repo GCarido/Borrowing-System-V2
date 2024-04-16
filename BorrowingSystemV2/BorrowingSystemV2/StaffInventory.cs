@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
@@ -32,6 +33,10 @@ namespace BorrowingSystemV2
             DataTable dt = new DataTable();
             adp.Fill(dt);
             staffInventoryData.DataSource = dt;
+
+            staffInventoryData.RowTemplate.Height = 80;
+            staffInventoryData.AllowUserToAddRows = false;
+
             searchDatas("");
             connection.Close();
         }
@@ -41,6 +46,24 @@ namespace BorrowingSystemV2
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = staffInventoryData.Rows[e.RowIndex];
+
+                if (row.Cells["image"].Value != DBNull.Value)
+                {
+                    // Check if the cell value is a byte array
+                    if (row.Cells["image"].Value is byte[])
+                    {
+                        byte[] img = (Byte[])row.Cells["image"].Value;
+                        using (MemoryStream ms = new MemoryStream(img))
+                        {
+                            equipmentImage.Image = Image.FromStream(ms);
+                        }
+                    }
+                    else
+                    {
+                        // Handle the case where the cell value is not a byte array
+                        MessageBox.Show("Invalid image format.");
+                    }
+                }
 
                 equipmentIDTxtbx.Text = row.Cells["equipmentID"].Value.ToString();
                 equipmentNameTxtbx.Text = row.Cells["equipmentName"].Value.ToString();

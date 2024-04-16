@@ -85,6 +85,7 @@ namespace BorrowingSystemV2
             if (e.KeyCode == Keys.Enter)
             {
                 loginStaff.PerformClick();
+              
             }
         }
 

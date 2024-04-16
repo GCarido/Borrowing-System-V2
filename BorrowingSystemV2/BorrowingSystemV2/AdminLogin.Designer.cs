@@ -109,6 +109,7 @@
             this.adminpasstxtbox.Name = "adminpasstxtbox";
             this.adminpasstxtbox.Size = new System.Drawing.Size(238, 28);
             this.adminpasstxtbox.TabIndex = 1;
+            this.adminpasstxtbox.UseSystemPasswordChar = true;
             this.adminpasstxtbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.adminpasstxtbox_KeyDown);
             // 
             // adminusertxtbox
