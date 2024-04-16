@@ -123,6 +123,9 @@ namespace BorrowingSystemV2
                     LoginPage.instance.Hide();
                     StaffForm form2 = new StaffForm();
                     form2.Show();
+                    AdminLogin.Position = null;
+                    AdminLogin.Username = null;
+                    AdminLogin.EmployeeID = null;
                 }
             }
             catch (Exception ex)

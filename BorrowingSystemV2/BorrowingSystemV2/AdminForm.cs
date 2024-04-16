@@ -151,7 +151,8 @@ namespace BorrowingSystemV2
 
         private void settingsBTN_Click(object sender, EventArgs e)
         {
-
+            loadform(new Settings());
+            adminFormPanel.Visible = true;
         }
 
         private void MinimizeButton_Click(object sender, EventArgs e)
