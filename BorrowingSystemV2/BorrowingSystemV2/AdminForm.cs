@@ -125,7 +125,7 @@ namespace BorrowingSystemV2
 
         private void adminLogsBTN_Click(object sender, EventArgs e)
         {
-
+            loadform(new Logs());
         }
 
         private void accMngmtBTN_Click(object sender, EventArgs e)

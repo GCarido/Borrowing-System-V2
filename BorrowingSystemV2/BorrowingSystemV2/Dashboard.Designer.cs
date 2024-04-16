@@ -39,7 +39,7 @@
             this.instructor_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.staffFullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_DATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.order_TIME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,7 +75,7 @@
             this.instructor_name,
             this.equipmentName,
             this.quantity,
-            this.staffFullname,
+            this.fullName,
             this.order_DATE,
             this.order_TIME,
             this.status_});
@@ -162,13 +162,13 @@
             this.quantity.Name = "quantity";
             this.quantity.ReadOnly = true;
             // 
-            // staffFullname
+            // fullName
             // 
-            this.staffFullname.DataPropertyName = "staffFullname";
-            this.staffFullname.HeaderText = "Staff Name";
-            this.staffFullname.MinimumWidth = 6;
-            this.staffFullname.Name = "staffFullname";
-            this.staffFullname.ReadOnly = true;
+            this.fullName.DataPropertyName = "fullName";
+            this.fullName.HeaderText = "Employee Name";
+            this.fullName.MinimumWidth = 6;
+            this.fullName.Name = "fullName";
+            this.fullName.ReadOnly = true;
             // 
             // order_DATE
             // 
@@ -227,7 +227,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn instructor_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn equipmentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn staffFullname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn order_DATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn order_TIME;
         private System.Windows.Forms.DataGridViewTextBoxColumn status_;
