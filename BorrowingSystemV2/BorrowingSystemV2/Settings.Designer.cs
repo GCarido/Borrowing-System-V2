@@ -39,7 +39,8 @@
             this.firstnameTxtbx = new System.Windows.Forms.TextBox();
             this.employeeIDTxtbx = new System.Windows.Forms.TextBox();
             this.updateBTN = new System.Windows.Forms.Button();
-            this.positioncmbx = new System.Windows.Forms.ComboBox();
+            this.positionTxtbx = new System.Windows.Forms.TextBox();
+            this.doneBTN = new System.Windows.Forms.Button();
             this.accountInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,8 +76,9 @@
             // 
             this.accountInfo.BackColor = System.Drawing.Color.Transparent;
             this.accountInfo.BackgroundImage = global::BorrowingSystemV2.Properties.Resources.Settings__1_;
-            this.accountInfo.Controls.Add(this.positioncmbx);
             this.accountInfo.Controls.Add(this.editBTN);
+            this.accountInfo.Controls.Add(this.doneBTN);
+            this.accountInfo.Controls.Add(this.positionTxtbx);
             this.accountInfo.Controls.Add(this.passwordTxtbx);
             this.accountInfo.Controls.Add(this.usernameTxtbx);
             this.accountInfo.Controls.Add(this.lastnameTxtbx);
@@ -100,66 +102,91 @@
             // 
             // passwordTxtbx
             // 
+            this.passwordTxtbx.BackColor = System.Drawing.Color.White;
+            this.passwordTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.passwordTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTxtbx.Location = new System.Drawing.Point(561, 403);
+            this.passwordTxtbx.Location = new System.Drawing.Point(561, 406);
             this.passwordTxtbx.Name = "passwordTxtbx";
-            this.passwordTxtbx.Size = new System.Drawing.Size(245, 35);
+            this.passwordTxtbx.ReadOnly = true;
+            this.passwordTxtbx.Size = new System.Drawing.Size(245, 28);
             this.passwordTxtbx.TabIndex = 5;
             // 
             // usernameTxtbx
             // 
+            this.usernameTxtbx.BackColor = System.Drawing.Color.White;
+            this.usernameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.usernameTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTxtbx.Location = new System.Drawing.Point(180, 403);
+            this.usernameTxtbx.Location = new System.Drawing.Point(180, 407);
             this.usernameTxtbx.Name = "usernameTxtbx";
-            this.usernameTxtbx.Size = new System.Drawing.Size(245, 35);
+            this.usernameTxtbx.ReadOnly = true;
+            this.usernameTxtbx.Size = new System.Drawing.Size(245, 28);
             this.usernameTxtbx.TabIndex = 4;
             // 
             // lastnameTxtbx
             // 
+            this.lastnameTxtbx.BackColor = System.Drawing.Color.White;
+            this.lastnameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lastnameTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastnameTxtbx.Location = new System.Drawing.Point(561, 296);
+            this.lastnameTxtbx.Location = new System.Drawing.Point(561, 300);
             this.lastnameTxtbx.Name = "lastnameTxtbx";
-            this.lastnameTxtbx.Size = new System.Drawing.Size(245, 35);
+            this.lastnameTxtbx.ReadOnly = true;
+            this.lastnameTxtbx.Size = new System.Drawing.Size(245, 28);
             this.lastnameTxtbx.TabIndex = 3;
             // 
             // firstnameTxtbx
             // 
+            this.firstnameTxtbx.BackColor = System.Drawing.Color.White;
+            this.firstnameTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.firstnameTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstnameTxtbx.Location = new System.Drawing.Point(180, 296);
+            this.firstnameTxtbx.Location = new System.Drawing.Point(180, 300);
             this.firstnameTxtbx.Name = "firstnameTxtbx";
-            this.firstnameTxtbx.Size = new System.Drawing.Size(245, 35);
+            this.firstnameTxtbx.ReadOnly = true;
+            this.firstnameTxtbx.Size = new System.Drawing.Size(245, 28);
             this.firstnameTxtbx.TabIndex = 1;
             // 
             // employeeIDTxtbx
             // 
+            this.employeeIDTxtbx.BackColor = System.Drawing.Color.White;
+            this.employeeIDTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.employeeIDTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeeIDTxtbx.Location = new System.Drawing.Point(180, 189);
+            this.employeeIDTxtbx.Location = new System.Drawing.Point(180, 192);
             this.employeeIDTxtbx.Name = "employeeIDTxtbx";
             this.employeeIDTxtbx.ReadOnly = true;
-            this.employeeIDTxtbx.Size = new System.Drawing.Size(245, 35);
+            this.employeeIDTxtbx.Size = new System.Drawing.Size(245, 28);
             this.employeeIDTxtbx.TabIndex = 0;
             // 
             // updateBTN
             // 
             this.updateBTN.Location = new System.Drawing.Point(389, 504);
             this.updateBTN.Name = "updateBTN";
-            this.updateBTN.Size = new System.Drawing.Size(238, 47);
+            this.updateBTN.Size = new System.Drawing.Size(117, 47);
             this.updateBTN.TabIndex = 7;
             this.updateBTN.Text = "Update";
             this.updateBTN.UseVisualStyleBackColor = true;
+            this.updateBTN.Visible = false;
+            this.updateBTN.Click += new System.EventHandler(this.updateBTN_Click);
             // 
-            // positioncmbx
+            // positionTxtbx
             // 
-            this.positioncmbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.positioncmbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.positioncmbx.FormattingEnabled = true;
-            this.positioncmbx.Items.AddRange(new object[] {
-            "Staff",
-            "Admin"});
-            this.positioncmbx.Location = new System.Drawing.Point(561, 188);
-            this.positioncmbx.Name = "positioncmbx";
-            this.positioncmbx.Size = new System.Drawing.Size(245, 37);
-            this.positioncmbx.TabIndex = 8;
+            this.positionTxtbx.BackColor = System.Drawing.SystemColors.Window;
+            this.positionTxtbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.positionTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.positionTxtbx.Location = new System.Drawing.Point(561, 193);
+            this.positionTxtbx.Name = "positionTxtbx";
+            this.positionTxtbx.ReadOnly = true;
+            this.positionTxtbx.Size = new System.Drawing.Size(245, 28);
+            this.positionTxtbx.TabIndex = 8;
+            // 
+            // doneBTN
+            // 
+            this.doneBTN.Location = new System.Drawing.Point(512, 504);
+            this.doneBTN.Name = "doneBTN";
+            this.doneBTN.Size = new System.Drawing.Size(115, 47);
+            this.doneBTN.TabIndex = 9;
+            this.doneBTN.Text = "Done";
+            this.doneBTN.UseVisualStyleBackColor = true;
+            this.doneBTN.Visible = false;
+            this.doneBTN.Click += new System.EventHandler(this.doneBTN_Click);
             // 
             // Settings
             // 
@@ -194,6 +221,7 @@
         private System.Windows.Forms.TextBox employeeIDTxtbx;
         private System.Windows.Forms.Button editBTN;
         private System.Windows.Forms.Button updateBTN;
-        private System.Windows.Forms.ComboBox positioncmbx;
+        private System.Windows.Forms.TextBox positionTxtbx;
+        private System.Windows.Forms.Button doneBTN;
     }
 }

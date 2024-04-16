@@ -35,7 +35,7 @@ namespace BorrowingSystemV2
             {
                 if(StaffLogin.Position == "Staff")
                 {
-                    positioncmbx.Enabled = false;
+                    
                     MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
                     connection.Open();
                     MySqlCommand cmd = new MySqlCommand("SELECT * FROM employee_staff WHERE staffID = @staffID", connection);
@@ -46,7 +46,7 @@ namespace BorrowingSystemV2
                         employeeIDTxtbx.Text = reader["staffID"].ToString();
                         firstnameTxtbx.Text = reader["firstname"].ToString();
                         lastnameTxtbx.Text = reader["lastname"].ToString();
-                        positioncmbx.Text = reader["position"].ToString();
+                        positionTxtbx.Text = reader["position"].ToString();
                         usernameTxtbx.Text = reader["username"].ToString();
                         passwordTxtbx.Text = reader["password_"].ToString();
                     }
@@ -64,7 +64,7 @@ namespace BorrowingSystemV2
                         employeeIDTxtbx.Text = reader["adminID"].ToString();
                         firstnameTxtbx.Text = reader["firstname"].ToString();
                         lastnameTxtbx.Text = reader["lastname"].ToString();
-                        positioncmbx.Text = reader["position"].ToString();
+                        positionTxtbx.Text = reader["position"].ToString();
                         usernameTxtbx.Text = reader["username"].ToString();
                         passwordTxtbx.Text = reader["password_"].ToString();
                     }
@@ -100,18 +100,14 @@ namespace BorrowingSystemV2
 
         private void editBTN_Click(object sender, EventArgs e)
         {
+            firstnameTxtbx.ReadOnly = false;
+            lastnameTxtbx.ReadOnly = false;
+            usernameTxtbx.ReadOnly = false;
+            passwordTxtbx.ReadOnly = false;
+            updateBTN.Visible = true;
+            doneBTN.Visible = true;
+            editBTN.Visible = false;
             
-            if(MessageBox.Show("Are you sure you want to edit your information?", "Edit Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                if(StaffLogin.Position == "Staff")
-                {
-                    updateStaff();
-                }
-                else
-                {
-                    updateAdmin();
-                }
-            }
         }
 
         public void updateStaff()
@@ -158,6 +154,32 @@ namespace BorrowingSystemV2
             {
                 Console.WriteLine($"Error: {ex.Message}");
             }
+        }
+
+        private void updateBTN_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to edit your information?", "Edit Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (StaffLogin.Position == "Staff")
+                {
+                    updateStaff();
+                }
+                else
+                {
+                    updateAdmin();
+                }
+            }
+        }
+
+        private void doneBTN_Click(object sender, EventArgs e)
+        {
+            firstnameTxtbx.ReadOnly = true;
+            lastnameTxtbx.ReadOnly = true;
+            usernameTxtbx.ReadOnly = true;
+            passwordTxtbx.ReadOnly = true;
+            updateBTN.Visible = false;
+            doneBTN.Visible = false;
+            editBTN.Visible = true;
         }
     }
 }
