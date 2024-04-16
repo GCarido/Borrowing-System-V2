@@ -32,14 +32,14 @@
             this.aboutBTN = new System.Windows.Forms.Button();
             this.logBTN = new System.Windows.Forms.Button();
             this.accountInfo = new System.Windows.Forms.Panel();
-            this.employeeIDTxtbx = new System.Windows.Forms.TextBox();
-            this.firstnameTxtbx = new System.Windows.Forms.TextBox();
-            this.positionTxtbx = new System.Windows.Forms.TextBox();
-            this.lastnameTxtbx = new System.Windows.Forms.TextBox();
-            this.usernameTxtbx = new System.Windows.Forms.TextBox();
-            this.passwordTxtbx = new System.Windows.Forms.TextBox();
             this.editBTN = new System.Windows.Forms.Button();
+            this.passwordTxtbx = new System.Windows.Forms.TextBox();
+            this.usernameTxtbx = new System.Windows.Forms.TextBox();
+            this.lastnameTxtbx = new System.Windows.Forms.TextBox();
+            this.firstnameTxtbx = new System.Windows.Forms.TextBox();
+            this.employeeIDTxtbx = new System.Windows.Forms.TextBox();
             this.updateBTN = new System.Windows.Forms.Button();
+            this.positioncmbx = new System.Windows.Forms.ComboBox();
             this.accountInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,11 +75,11 @@
             // 
             this.accountInfo.BackColor = System.Drawing.Color.Transparent;
             this.accountInfo.BackgroundImage = global::BorrowingSystemV2.Properties.Resources.Settings__1_;
+            this.accountInfo.Controls.Add(this.positioncmbx);
             this.accountInfo.Controls.Add(this.editBTN);
             this.accountInfo.Controls.Add(this.passwordTxtbx);
             this.accountInfo.Controls.Add(this.usernameTxtbx);
             this.accountInfo.Controls.Add(this.lastnameTxtbx);
-            this.accountInfo.Controls.Add(this.positionTxtbx);
             this.accountInfo.Controls.Add(this.firstnameTxtbx);
             this.accountInfo.Controls.Add(this.employeeIDTxtbx);
             this.accountInfo.Controls.Add(this.updateBTN);
@@ -87,54 +87,6 @@
             this.accountInfo.Name = "accountInfo";
             this.accountInfo.Size = new System.Drawing.Size(974, 565);
             this.accountInfo.TabIndex = 3;
-            // 
-            // employeeIDTxtbx
-            // 
-            this.employeeIDTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeeIDTxtbx.Location = new System.Drawing.Point(180, 189);
-            this.employeeIDTxtbx.Name = "employeeIDTxtbx";
-            this.employeeIDTxtbx.Size = new System.Drawing.Size(245, 35);
-            this.employeeIDTxtbx.TabIndex = 0;
-            // 
-            // firstnameTxtbx
-            // 
-            this.firstnameTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstnameTxtbx.Location = new System.Drawing.Point(180, 296);
-            this.firstnameTxtbx.Name = "firstnameTxtbx";
-            this.firstnameTxtbx.Size = new System.Drawing.Size(245, 35);
-            this.firstnameTxtbx.TabIndex = 1;
-            // 
-            // positionTxtbx
-            // 
-            this.positionTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.positionTxtbx.Location = new System.Drawing.Point(561, 189);
-            this.positionTxtbx.Name = "positionTxtbx";
-            this.positionTxtbx.Size = new System.Drawing.Size(245, 35);
-            this.positionTxtbx.TabIndex = 2;
-            // 
-            // lastnameTxtbx
-            // 
-            this.lastnameTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lastnameTxtbx.Location = new System.Drawing.Point(561, 296);
-            this.lastnameTxtbx.Name = "lastnameTxtbx";
-            this.lastnameTxtbx.Size = new System.Drawing.Size(245, 35);
-            this.lastnameTxtbx.TabIndex = 3;
-            // 
-            // usernameTxtbx
-            // 
-            this.usernameTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTxtbx.Location = new System.Drawing.Point(180, 403);
-            this.usernameTxtbx.Name = "usernameTxtbx";
-            this.usernameTxtbx.Size = new System.Drawing.Size(245, 35);
-            this.usernameTxtbx.TabIndex = 4;
-            // 
-            // passwordTxtbx
-            // 
-            this.passwordTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTxtbx.Location = new System.Drawing.Point(561, 403);
-            this.passwordTxtbx.Name = "passwordTxtbx";
-            this.passwordTxtbx.Size = new System.Drawing.Size(245, 35);
-            this.passwordTxtbx.TabIndex = 5;
             // 
             // editBTN
             // 
@@ -144,6 +96,48 @@
             this.editBTN.TabIndex = 6;
             this.editBTN.Text = "Edit";
             this.editBTN.UseVisualStyleBackColor = true;
+            this.editBTN.Click += new System.EventHandler(this.editBTN_Click);
+            // 
+            // passwordTxtbx
+            // 
+            this.passwordTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTxtbx.Location = new System.Drawing.Point(561, 403);
+            this.passwordTxtbx.Name = "passwordTxtbx";
+            this.passwordTxtbx.Size = new System.Drawing.Size(245, 35);
+            this.passwordTxtbx.TabIndex = 5;
+            // 
+            // usernameTxtbx
+            // 
+            this.usernameTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTxtbx.Location = new System.Drawing.Point(180, 403);
+            this.usernameTxtbx.Name = "usernameTxtbx";
+            this.usernameTxtbx.Size = new System.Drawing.Size(245, 35);
+            this.usernameTxtbx.TabIndex = 4;
+            // 
+            // lastnameTxtbx
+            // 
+            this.lastnameTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lastnameTxtbx.Location = new System.Drawing.Point(561, 296);
+            this.lastnameTxtbx.Name = "lastnameTxtbx";
+            this.lastnameTxtbx.Size = new System.Drawing.Size(245, 35);
+            this.lastnameTxtbx.TabIndex = 3;
+            // 
+            // firstnameTxtbx
+            // 
+            this.firstnameTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstnameTxtbx.Location = new System.Drawing.Point(180, 296);
+            this.firstnameTxtbx.Name = "firstnameTxtbx";
+            this.firstnameTxtbx.Size = new System.Drawing.Size(245, 35);
+            this.firstnameTxtbx.TabIndex = 1;
+            // 
+            // employeeIDTxtbx
+            // 
+            this.employeeIDTxtbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeIDTxtbx.Location = new System.Drawing.Point(180, 189);
+            this.employeeIDTxtbx.Name = "employeeIDTxtbx";
+            this.employeeIDTxtbx.ReadOnly = true;
+            this.employeeIDTxtbx.Size = new System.Drawing.Size(245, 35);
+            this.employeeIDTxtbx.TabIndex = 0;
             // 
             // updateBTN
             // 
@@ -153,6 +147,19 @@
             this.updateBTN.TabIndex = 7;
             this.updateBTN.Text = "Update";
             this.updateBTN.UseVisualStyleBackColor = true;
+            // 
+            // positioncmbx
+            // 
+            this.positioncmbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.positioncmbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.positioncmbx.FormattingEnabled = true;
+            this.positioncmbx.Items.AddRange(new object[] {
+            "Staff",
+            "Admin"});
+            this.positioncmbx.Location = new System.Drawing.Point(561, 188);
+            this.positioncmbx.Name = "positioncmbx";
+            this.positioncmbx.Size = new System.Drawing.Size(245, 37);
+            this.positioncmbx.TabIndex = 8;
             // 
             // Settings
             // 
@@ -183,10 +190,10 @@
         private System.Windows.Forms.TextBox passwordTxtbx;
         private System.Windows.Forms.TextBox usernameTxtbx;
         private System.Windows.Forms.TextBox lastnameTxtbx;
-        private System.Windows.Forms.TextBox positionTxtbx;
         private System.Windows.Forms.TextBox firstnameTxtbx;
         private System.Windows.Forms.TextBox employeeIDTxtbx;
         private System.Windows.Forms.Button editBTN;
         private System.Windows.Forms.Button updateBTN;
+        private System.Windows.Forms.ComboBox positioncmbx;
     }
 }

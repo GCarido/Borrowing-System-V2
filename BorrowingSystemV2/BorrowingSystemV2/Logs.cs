@@ -29,7 +29,7 @@ namespace BorrowingSystemV2
             {
                 MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
                 connection.Open();
-                if (StaffLogin.Position == "Staff" || AdminLogin.Position == "Staff")
+                if (StaffLogin.Position == "Staff")
                 {
                     logsTable.Columns["fullName"].Visible = false;
                 }
@@ -93,7 +93,7 @@ namespace BorrowingSystemV2
                 MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
                 connection.Open();
 
-                if (StaffLogin.Position == "Staff" || AdminLogin.Position == "Staff")
+                if (StaffLogin.Position == "Staff")
                 {
                     logsTable.Columns["fullName"].Visible = false;
                 }
