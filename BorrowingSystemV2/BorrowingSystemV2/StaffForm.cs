@@ -144,6 +144,7 @@ namespace BorrowingSystemV2
 
         private void settingsBTN_Click(object sender, EventArgs e)
         {
+            loadform(new Settings());
             staffFormPanel.Visible = true;
             settingsBTN.BackColor = Color.FromArgb(252, 168, 115);
             settingsBTN.ForeColor = Color.Black;

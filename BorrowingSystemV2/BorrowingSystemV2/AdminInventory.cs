@@ -261,7 +261,7 @@ namespace BorrowingSystemV2
         {
             MySqlConnection connection = new MySqlConnection("datasource=" + mySqlServerName + ";port=3306;username=" + mySqlServerUserId + ";password=" + mySqlServerPassword + ";database=" + mySqlDatabaseName + ";");
             connection.Open();
-            string searchQuery = "SELECT * FROM sql6696982.inventory WHERE CONCAT(`equipmentID`, `equipmentName`, `equipmentDescription`, `quantity`, `condition_`) like '%" + searchData.Text + "%'";
+            string searchQuery = "SELECT * FROM sql6696982.inventory WHERE CONCAT(`equipmentID`, `equipmentName`, `equipmentDescription`, `quantity`, `condition_`, `image`) like '%" + searchData.Text + "%'";
             MySqlCommand cmd = new MySqlCommand(searchQuery, connection);
             MySqlDataAdapter adp = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
