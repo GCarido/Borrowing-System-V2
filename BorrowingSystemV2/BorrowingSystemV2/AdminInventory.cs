@@ -49,7 +49,7 @@ namespace BorrowingSystemV2
 
         private void insertimageBTN_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "Choose Image(*.jpg; *.png; *.gif) | *.jpg; *.png; *.gif";
+            openFileDialog1.Filter = "Choose Image(*.jpg) | *.jpg";
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -82,6 +82,19 @@ namespace BorrowingSystemV2
                 if (table.Rows.Count > 0)
                 {
                     MessageBox.Show("Equipment ID already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                string queryCheckName = "SELECT * FROM sql6696982.inventory WHERE equipmentName = @equipmentName";
+                MySqlCommand commandCheckName = new MySqlCommand(queryCheckName, conn);
+                commandCheckName.Parameters.AddWithValue("@equipmentName", equipmentNameTxtbx.Text);
+                MySqlDataAdapter adapterName = new MySqlDataAdapter(commandCheckName);
+                DataTable tableName = new DataTable();
+                adapterName.Fill(tableName);
+
+                if (tableName.Rows.Count > 0)
+                {
+                    MessageBox.Show("Equipment name already exists", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -158,7 +171,8 @@ namespace BorrowingSystemV2
                     connection.Open();
                     MySqlCommand command = connection.CreateCommand();
 
-                    command.CommandText = "UPDATE inventory SET equipmentName = @equipmentName, equipmentDescription = @equipmentDescription, quantity = @quantity, condition_ = @condition_ WHERE equipmentID = @equipmentID";
+                    command.CommandText = "UPDATE inventory SET equipmentName = @equipmentName, equipmentDescription = @equipmentDescription, quantity = @quantity, condition_ = @condition_ image = @image WHERE equipmentID = @equipmentID";
+                    command.Parameters.AddWithValue("@image", imageData);
                     command.Parameters.AddWithValue("@equipmentID", equipmentIDTxtbx.Text);
                     command.Parameters.AddWithValue("@equipmentName", equipmentNameTxtbx.Text);
                     command.Parameters.AddWithValue("@equipmentDescription", equipmentDescriptionTxtbx.Text);
