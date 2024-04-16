@@ -171,8 +171,7 @@ namespace BorrowingSystemV2
                     connection.Open();
                     MySqlCommand command = connection.CreateCommand();
 
-                    command.CommandText = "UPDATE inventory SET equipmentName = @equipmentName, equipmentDescription = @equipmentDescription, quantity = @quantity, condition_ = @condition_ image = @image WHERE equipmentID = @equipmentID";
-                    command.Parameters.AddWithValue("@image", imageData);
+                    command.CommandText = "UPDATE inventory SET equipmentName = @equipmentName, equipmentDescription = @equipmentDescription, quantity = @quantity, condition_ = @condition_ WHERE equipmentID = @equipmentID";
                     command.Parameters.AddWithValue("@equipmentID", equipmentIDTxtbx.Text);
                     command.Parameters.AddWithValue("@equipmentName", equipmentNameTxtbx.Text);
                     command.Parameters.AddWithValue("@equipmentDescription", equipmentDescriptionTxtbx.Text);
