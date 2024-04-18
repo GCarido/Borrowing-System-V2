@@ -124,7 +124,15 @@ namespace BorrowingSystemV2
                         command.ExecuteNonQuery();
 
                         MessageBox.Show("New Equipment Added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ReloadDataGridView();  
+                        ReloadDataGridView(); 
+
+                        equipmentIDTxtbx.Text = "";
+                        equipmentNameTxtbx.Text = "";
+                        equipmentDescriptionTxtbx.Text = "";
+                        quantityTxtbx.Text = "";
+                        conditionTxtbx.Text = "";
+                        equipmentImage.Image = null;
+
                     }
                     else
                     {
@@ -183,6 +191,12 @@ namespace BorrowingSystemV2
                     {
                         MessageBox.Show("Equipment updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ReloadDataGridView();
+                        equipmentIDTxtbx.Text = "";
+                        equipmentNameTxtbx.Text = "";
+                        equipmentDescriptionTxtbx.Text = "";
+                        quantityTxtbx.Text = "";
+                        conditionTxtbx.Text = "";
+                        equipmentImage.Image = null;
                     }
                     else
                     {
@@ -349,6 +363,13 @@ namespace BorrowingSystemV2
             equipmentNameTxtbx.ReadOnly = true;
             quantityTxtbx.ReadOnly = true;
             conditionTxtbx.ReadOnly = true;
+
+            equipmentIDTxtbx.Text = "";
+            equipmentNameTxtbx.Text = "";
+            equipmentDescriptionTxtbx.Text = "";
+            quantityTxtbx.Text = "";
+            conditionTxtbx.Text = "";
+            equipmentImage.Image = null;
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -356,6 +377,12 @@ namespace BorrowingSystemV2
 
         }
 
-        
+        private void searchData_TextChanged(object sender, EventArgs e)
+        {
+            if(searchData.Text == "")
+            {
+                ReloadDataGridView();
+            }
+        }
     }
 }
