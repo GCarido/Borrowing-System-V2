@@ -31,6 +31,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.adminInventoryData = new System.Windows.Forms.DataGridView();
+            this.equipmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipmentDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.condition_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.image = new System.Windows.Forms.DataGridViewImageColumn();
             this.searchBTN = new System.Windows.Forms.Button();
             this.searchData = new System.Windows.Forms.TextBox();
             this.quantityTxtbx = new System.Windows.Forms.TextBox();
@@ -46,12 +52,6 @@
             this.editBTN = new System.Windows.Forms.Button();
             this.equipmentImage = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.equipmentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipmentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipmentDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.condition_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.image = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.adminInventoryData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipmentImage)).BeginInit();
             this.SuspendLayout();
@@ -95,6 +95,61 @@
             this.adminInventoryData.TabIndex = 15;
             this.adminInventoryData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adminInventoryData_CellClick);
             // 
+            // equipmentID
+            // 
+            this.equipmentID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.equipmentID.DataPropertyName = "equipmentID";
+            this.equipmentID.FillWeight = 66.29907F;
+            this.equipmentID.HeaderText = "Equipment ID";
+            this.equipmentID.Name = "equipmentID";
+            this.equipmentID.ReadOnly = true;
+            // 
+            // equipmentName
+            // 
+            this.equipmentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.equipmentName.DataPropertyName = "equipmentName";
+            this.equipmentName.FillWeight = 111.2814F;
+            this.equipmentName.HeaderText = "Equipment Name";
+            this.equipmentName.Name = "equipmentName";
+            this.equipmentName.ReadOnly = true;
+            // 
+            // equipmentDescription
+            // 
+            this.equipmentDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.equipmentDescription.DataPropertyName = "equipmentDescription";
+            this.equipmentDescription.FillWeight = 201.4457F;
+            this.equipmentDescription.HeaderText = "Equipment Description";
+            this.equipmentDescription.Name = "equipmentDescription";
+            this.equipmentDescription.ReadOnly = true;
+            // 
+            // quantity
+            // 
+            this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.quantity.DataPropertyName = "quantity";
+            this.quantity.FillWeight = 54.09601F;
+            this.quantity.HeaderText = "Quantity";
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            // 
+            // condition_
+            // 
+            this.condition_.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.condition_.DataPropertyName = "condition_";
+            this.condition_.FillWeight = 60.9137F;
+            this.condition_.HeaderText = "Condition";
+            this.condition_.Name = "condition_";
+            this.condition_.ReadOnly = true;
+            // 
+            // image
+            // 
+            this.image.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.image.DataPropertyName = "image";
+            this.image.FillWeight = 105.964F;
+            this.image.HeaderText = "Image";
+            this.image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.image.Name = "image";
+            this.image.ReadOnly = true;
+            // 
             // searchBTN
             // 
             this.searchBTN.BackColor = System.Drawing.Color.White;
@@ -122,6 +177,7 @@
             this.searchData.Name = "searchData";
             this.searchData.Size = new System.Drawing.Size(400, 26);
             this.searchData.TabIndex = 13;
+            this.searchData.TextChanged += new System.EventHandler(this.searchData_TextChanged);
             // 
             // quantityTxtbx
             // 
@@ -288,61 +344,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
-            // 
-            // equipmentID
-            // 
-            this.equipmentID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.equipmentID.DataPropertyName = "equipmentID";
-            this.equipmentID.FillWeight = 66.29907F;
-            this.equipmentID.HeaderText = "Equipment ID";
-            this.equipmentID.Name = "equipmentID";
-            this.equipmentID.ReadOnly = true;
-            // 
-            // equipmentName
-            // 
-            this.equipmentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.equipmentName.DataPropertyName = "equipmentName";
-            this.equipmentName.FillWeight = 111.2814F;
-            this.equipmentName.HeaderText = "Equipment Name";
-            this.equipmentName.Name = "equipmentName";
-            this.equipmentName.ReadOnly = true;
-            // 
-            // equipmentDescription
-            // 
-            this.equipmentDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.equipmentDescription.DataPropertyName = "equipmentDescription";
-            this.equipmentDescription.FillWeight = 201.4457F;
-            this.equipmentDescription.HeaderText = "Equipment Description";
-            this.equipmentDescription.Name = "equipmentDescription";
-            this.equipmentDescription.ReadOnly = true;
-            // 
-            // quantity
-            // 
-            this.quantity.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.quantity.DataPropertyName = "quantity";
-            this.quantity.FillWeight = 54.09601F;
-            this.quantity.HeaderText = "Quantity";
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            // 
-            // condition_
-            // 
-            this.condition_.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.condition_.DataPropertyName = "condition_";
-            this.condition_.FillWeight = 60.9137F;
-            this.condition_.HeaderText = "Condition";
-            this.condition_.Name = "condition_";
-            this.condition_.ReadOnly = true;
-            // 
-            // image
-            // 
-            this.image.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.image.DataPropertyName = "image";
-            this.image.FillWeight = 105.964F;
-            this.image.HeaderText = "Image";
-            this.image.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.image.Name = "image";
-            this.image.ReadOnly = true;
             // 
             // AdminInventory
             // 
