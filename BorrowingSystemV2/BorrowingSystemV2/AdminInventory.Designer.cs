@@ -52,6 +52,7 @@
             this.editBTN = new System.Windows.Forms.Button();
             this.equipmentImage = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.clearBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.adminInventoryData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipmentImage)).BeginInit();
             this.SuspendLayout();
@@ -241,9 +242,9 @@
             this.createBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.createBTN.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.createBTN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.createBTN.Location = new System.Drawing.Point(40, 580);
+            this.createBTN.Location = new System.Drawing.Point(98, 586);
             this.createBTN.Name = "createBTN";
-            this.createBTN.Size = new System.Drawing.Size(90, 40);
+            this.createBTN.Size = new System.Drawing.Size(76, 28);
             this.createBTN.TabIndex = 16;
             this.createBTN.Text = "Create";
             this.createBTN.UseVisualStyleBackColor = false;
@@ -273,9 +274,9 @@
             this.updateBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.updateBTN.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Bold);
             this.updateBTN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.updateBTN.Location = new System.Drawing.Point(136, 580);
+            this.updateBTN.Location = new System.Drawing.Point(181, 586);
             this.updateBTN.Name = "updateBTN";
-            this.updateBTN.Size = new System.Drawing.Size(90, 40);
+            this.updateBTN.Size = new System.Drawing.Size(90, 28);
             this.updateBTN.TabIndex = 18;
             this.updateBTN.Text = "Update";
             this.updateBTN.UseVisualStyleBackColor = false;
@@ -289,9 +290,9 @@
             this.deleteBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.deleteBTN.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Bold);
             this.deleteBTN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.deleteBTN.Location = new System.Drawing.Point(232, 580);
+            this.deleteBTN.Location = new System.Drawing.Point(277, 586);
             this.deleteBTN.Name = "deleteBTN";
-            this.deleteBTN.Size = new System.Drawing.Size(90, 40);
+            this.deleteBTN.Size = new System.Drawing.Size(77, 28);
             this.deleteBTN.TabIndex = 19;
             this.deleteBTN.Text = "Delete";
             this.deleteBTN.UseVisualStyleBackColor = false;
@@ -305,9 +306,9 @@
             this.doneBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.doneBTN.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Bold);
             this.doneBTN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-            this.doneBTN.Location = new System.Drawing.Point(328, 580);
+            this.doneBTN.Location = new System.Drawing.Point(360, 586);
             this.doneBTN.Name = "doneBTN";
-            this.doneBTN.Size = new System.Drawing.Size(90, 40);
+            this.doneBTN.Size = new System.Drawing.Size(72, 28);
             this.doneBTN.TabIndex = 20;
             this.doneBTN.Text = "Done";
             this.doneBTN.UseVisualStyleBackColor = false;
@@ -345,12 +346,29 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
+            // clearBtn
+            // 
+            this.clearBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(199)))), ((int)(((byte)(230)))));
+            this.clearBtn.FlatAppearance.BorderSize = 0;
+            this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearBtn.Font = new System.Drawing.Font("Gadugi", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
+            this.clearBtn.Location = new System.Drawing.Point(20, 586);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(72, 28);
+            this.clearBtn.TabIndex = 23;
+            this.clearBtn.Text = "Clear";
+            this.clearBtn.UseVisualStyleBackColor = false;
+            this.clearBtn.Visible = false;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
+            // 
             // AdminInventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BorrowingSystemV2.Properties.Resources.Admin_invenotry__1_;
             this.ClientSize = new System.Drawing.Size(1532, 650);
+            this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.equipmentImage);
             this.Controls.Add(this.editBTN);
             this.Controls.Add(this.doneBTN);
@@ -401,5 +419,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn condition_;
         private System.Windows.Forms.DataGridViewImageColumn image;
+        private System.Windows.Forms.Button clearBtn;
     }
 }
