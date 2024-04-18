@@ -28,12 +28,6 @@ namespace BorrowingSystemV2
 
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            if (quantityTxt.Value == 0)
-            {   
-                MessageBox.Show("Please input a value more than 0", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
                 if (notesTxt.Text == "")
                 {
                     if (MessageBox.Show("You have not added a note. Do you want to proceed?", "Alert", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -52,7 +46,6 @@ namespace BorrowingSystemV2
                         this.Hide();
                     }
                 }
-            }
         } 
     }
 }

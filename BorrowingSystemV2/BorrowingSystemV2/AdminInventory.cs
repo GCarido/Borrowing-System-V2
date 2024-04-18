@@ -62,9 +62,9 @@ namespace BorrowingSystemV2
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(equipmentIDTxtbx.Text) || string.IsNullOrWhiteSpace(equipmentNameTxtbx.Text) ||
+                if (string.IsNullOrWhiteSpace(equipmentNameTxtbx.Text) ||
                     string.IsNullOrWhiteSpace(equipmentDescriptionTxtbx.Text) || string.IsNullOrWhiteSpace(quantityTxtbx.Text) ||
-                    string.IsNullOrWhiteSpace(conditionTxtbx.Text))
+                    string.IsNullOrWhiteSpace(conditionTxtbx.Text) || equipmentImage == null || equipmentImage.Image == null)
                 {
                     MessageBox.Show("Please provide all necessary information", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -111,9 +111,8 @@ namespace BorrowingSystemV2
                         MySqlConnection connection = new MySqlConnection($"datasource={mySqlServerName};port=3306;username={mySqlServerUserId};password={mySqlServerPassword};database={mySqlDatabaseName}");
                         MySqlCommand command = connection.CreateCommand();
                         
-                        command.CommandText = "INSERT INTO inventory (equipmentID, equipmentName, equipmentDescription, quantity, condition_, image) " +
-                                                  "VALUES (@equipmentID, @equipmentName, @equipmentDescription, @quantity, @condition_, @image)";
-                        command.Parameters.AddWithValue("@equipmentID", equipmentIDTxtbx.Text);
+                        command.CommandText = "INSERT INTO inventory (equipmentName, equipmentDescription, quantity, condition_, image) " +
+                                                  "VALUES (@equipmentName, @equipmentDescription, @quantity, @condition_, @image)";
                         command.Parameters.AddWithValue("@equipmentName", equipmentNameTxtbx.Text);
                         command.Parameters.AddWithValue("@equipmentDescription", equipmentDescriptionTxtbx.Text);
                         command.Parameters.AddWithValue("@quantity", quantityTxtbx.Text);
@@ -150,7 +149,7 @@ namespace BorrowingSystemV2
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(equipmentIDTxtbx.Text) || string.IsNullOrWhiteSpace(equipmentNameTxtbx.Text) ||
+                if (string.IsNullOrWhiteSpace(equipmentNameTxtbx.Text) ||
                     string.IsNullOrWhiteSpace(equipmentDescriptionTxtbx.Text) || string.IsNullOrWhiteSpace(quantityTxtbx.Text) ||
                     string.IsNullOrWhiteSpace(conditionTxtbx.Text))
                 {
@@ -178,13 +177,18 @@ namespace BorrowingSystemV2
                     MySqlConnection connection = new MySqlConnection($"datasource={mySqlServerName};port=3306;username={mySqlServerUserId};password={mySqlServerPassword};database={mySqlDatabaseName}");
                     connection.Open();
                     MySqlCommand command = connection.CreateCommand();
-
-                    command.CommandText = "UPDATE inventory SET equipmentName = @equipmentName, equipmentDescription = @equipmentDescription, quantity = @quantity, condition_ = @condition_ WHERE equipmentID = @equipmentID";
+                    // Read the image file into a byte array
+                    byte[] imageData;
+                    FileStream fs = new FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read);
+                    BinaryReader br = new BinaryReader(fs);
+                    imageData = br.ReadBytes((int)fs.Length);
+                    command.CommandText = "UPDATE inventory SET equipmentName = @equipmentName, equipmentDescription = @equipmentDescription, quantity = @quantity, condition_ = @condition_ image = @image WHERE equipmentID = @equipmentID";
                     command.Parameters.AddWithValue("@equipmentID", equipmentIDTxtbx.Text);
                     command.Parameters.AddWithValue("@equipmentName", equipmentNameTxtbx.Text);
                     command.Parameters.AddWithValue("@equipmentDescription", equipmentDescriptionTxtbx.Text);
                     command.Parameters.AddWithValue("@quantity", quantityTxtbx.Text);
                     command.Parameters.AddWithValue("@condition_", conditionTxtbx.Text);
+                    command.Parameters.AddWithValue("@image", imageData);
                     
                     int rowsAffected = command.ExecuteNonQuery();
                     if (rowsAffected > 0)
@@ -341,24 +345,25 @@ namespace BorrowingSystemV2
             updateBTN.Visible = true;
             deleteBTN.Visible = true;
             doneBTN.Visible = true;
+            clearBtn.Visible = true;
             insertimageBTN.Visible = true;
             editBTN.Visible = false;
-            equipmentIDTxtbx.ReadOnly = false;
             equipmentDescriptionTxtbx.ReadOnly = false;
             equipmentNameTxtbx.ReadOnly = false;
             quantityTxtbx.ReadOnly = false;
             conditionTxtbx.ReadOnly = false;
+
         }
 
         private void doneBTN_Click(object sender, EventArgs e)
         {
-            createBTN.Visible=false;
-            updateBTN.Visible=false;
-            deleteBTN.Visible=false;
-            doneBTN.Visible=false;
-            insertimageBTN.Visible=false;
-            editBTN.Visible=true;
-            equipmentIDTxtbx.ReadOnly = true;
+            createBTN.Visible = false;
+            updateBTN.Visible = false;
+            deleteBTN.Visible = false;
+            doneBTN.Visible = false;
+            clearBtn.Visible = false;
+            insertimageBTN.Visible = false;
+            editBTN.Visible = true;
             equipmentDescriptionTxtbx.ReadOnly = true;
             equipmentNameTxtbx.ReadOnly = true;
             quantityTxtbx.ReadOnly = true;
@@ -383,6 +388,16 @@ namespace BorrowingSystemV2
             {
                 ReloadDataGridView();
             }
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            equipmentIDTxtbx.Text = "";
+            equipmentNameTxtbx.Text = "";
+            equipmentDescriptionTxtbx.Text = "";
+            quantityTxtbx.Text = "";
+            conditionTxtbx.Text = "";
+            equipmentImage.Image = null;
         }
     }
 }
